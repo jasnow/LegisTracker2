@@ -1,0 +1,78 @@
+<div id="inside" class="span-22 push-1 first last">
+	<% if flash[:notice] %>
+		<p class="flash notice span-21 first last"><%= flash[:notice] %></p>
+	<% end %>
+	<% if flash[:error] %>
+		<p class="flash error span-21 first last"><%= flash[:error] %></p>
+	<% end %>
+
+	<div id="key" class="first">
+	<% if @vote.is_key? %>
+		<%= link_to image_tag("bt_sm_unwatch.png", :mouseover => "bt_sm_unwatch_hvr.png"),  unkey_vote_path( @vote ), :alt=> 'Un-watch', :title => 'Un-watch', :class => 'watched' %>
+	<% else %>
+		<%= link_to image_tag("bt_sm_watch.png", :mouseover => "bt_sm_watch_hvr.png"), key_vote_path( @vote ), :alt=> 'Watch', :title => 'Watch', :class => 'unwatched'  %>
+	<% end %>
+	</div>
+
+	<div id="keytitle" class="span-19 last">
+		<header><hgroup><h2><%= "#{@vote.legislation}" %> <span class="memid"> <%= "#{@vote.description}" %> </span></h2>
+	<h4>Vote on <%= @vote.date.strftime( '%Y-%m-%d' ) %></h4><hgroup></header>
+		</div>
+	<section id="bill_description" class="span-19 first last" ><p>
+		<% if @bill %>
+			<%= link_to "#{@bill.number}", bill_path( @bill ) %> <%= @bill.short_title %>
+			<%= @bill.short_title %>
+		<% end %>
+		</p>
+	</section>
+
+<hr/>
+
+</div>
+
+
+	
+<div id="votebox" class="span-10 push-6 first last">
+	<ul>
+		<li><strong>Yea:</strong> <%= @vote.yea %></li>
+  		<li><strong>Nay:</strong> <%= @vote.nay%></li>
+		<li><strong>Not Voting:</strong> <%= @vote.not_voting %></li>
+		<li><strong>Excused:</strong> <%= @vote.excused %></li>
+	</ul>
+</div>
+
+
+
+<section id="repub_votes" class="span-5 push-6 border first">
+	<h3>Republicans</h3>
+	<strong>
+		Yea: <%= @repub_votes.yea.count %> |
+  	Nay: <%= @repub_votes.nay.count %>
+	</strong>
+	<ul>
+		<% @repub_votes.each do |vote| %>
+		<li>
+			<%= link_to vote.display_name, member_path( vote.member ) %>
+			( <%= vote.district_name %> )
+			<strong><%= vote.vote_cast %></strong>
+		</li>
+		<% end %>
+	</ul>
+</section>
+
+<section id="demo_votes" class="span-7 push-8 last">
+	<h3>Democrats</h3>
+	<strong>
+		Yea: <%= @demo_votes.yea.count %> |
+  	Nay: <%= @demo_votes.nay.count %>
+	</strong>
+	<ul>
+		<% @demo_votes.each do |vote| %>
+		<li>
+			<%= link_to vote.display_name, member_path( vote.member ) %>
+			( <%= vote.district_name %> )
+			<strong><%= vote.vote_cast %></strong>
+		</li>
+		<% end %>
+	</ul>
+</section>

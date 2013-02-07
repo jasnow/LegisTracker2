@@ -1,14 +1,82 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html >
+<html lang="en">
 <head>
-  <title>LegisTracker2</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<meta charset="utf-8">
+  <title><%= "AJC LegiTracker | #{@title}" %></title>
+  <%= csrf_meta_tag %>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
+  <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Orbitron', :media =>'screen'%>
+	<%= stylesheet_link_tag 'jquery.mCustomScrollbar.css', :media=>'screen' %>
+	
+	
+	<%=javascript_include_tag 'jquery' %>
+	<%=javascript_include_tag 'rails'%>
+	<%=javascript_include_tag 'jquery.min.js' %>
+	<%=javascript_include_tag 'jquery-ui.min.js' %>
+	<%=javascript_include_tag 'jquery.mCustomScrollbar.js'%>
+	<%=javascript_include_tag 'jquery.easing.1.3.js'%>
+	<%=javascript_include_tag 'jquery.mousewheel.min.js'%>
+
+
+
 </head>
 <body>
+<div id="container" class="container">
+	  
+	<header id="header" class="span-24 first last">
+      
+			<div id="logo" class="span-16 first">
+			   <h1> <%= link_to 'LegiTracker', root_url %></h1>
+	      	</div>
 
-<%= yield %>
+		    <div id="search" class="span-7 last">
+		        <%= form_for @search, :url => bills_path, :class => 'inline', :html => {:method => :get} do |f| %>
+		          <%= f.search_field :number_or_short_title_or_title_or_b_status_contains, :placeholder => 'Quick search' %> <%= image_submit_tag 'ic_search.png'%>
+		        <% end %>
+		        <%= link_to "Advanced Search  "   , search_path, :class => 'advanced_search' %>
+		    </div>
+
+	</header>
+
+<div id="navhed" class="span-24 first last">
+		<nav class="first span-12">
+				<ul>
+					<li><%= link_to "Watched bills", root_path, :class => current_class?(root_path) %></li>
+					<li><%= link_to "Daily status report", statuses_path, :class => current_class?(statuses_path)  %></li>
+					<li><%= link_to "Members", members_path, :class => current_class?(members_path)  %></li>
+					<li><%= link_to "Committees",'#', :class => current_class?('#')  %></li>
+				</ul>
+		</nav>
+		<div id="user_nav" class="span-9">
+			<% if user_signed_in? %>
+				Signed in as <em> <%= current_user.email %></em> &nbsp; Not you?
+				<%= link_to "Sign out", destroy_user_session_path %>
+			<% else %>
+				<%= link_to "Sign up", new_user_registration_path %> or
+				<%= link_to "Sign in", new_user_session_path %>
+			<% end %>
+		</div>
+		
+	</div>
+	
+	<div id="content" class="span-24 first last ">
+		
+		<%= yield %>
+		<footer id="footer" class="span-24 first last">
+			<p>Copyright &copy;<%= Date.today.year %></p>
+	  	</footer>
+	 </div>
+
 
 </body>
 </html>
+
+

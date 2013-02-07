@@ -1,0 +1,128 @@
+<div id="inside" class="span-22 push-1 first last">
+  <h2>
+    <%= @member.name %>
+    <span class="memid">
+      <%= @member.seat %> 
+      <%= @member.party %>
+    </span>
+  </h2>
+</div>
+
+<section id="campaign_finance" class="span-22 push-1 first last" >
+	<h3>Campaign Finance</h3>
+  <% if @member.top_contributors.nil? %>
+    No data available from FollowTheMoney.org
+  <% else %>
+  <section id="top_donors" class="span-13 first">
+	  <p>2010 contribution total: <strong><%= number_to_currency(@member.total_dollars, :precision => 0) %></strong></p>
+    <h4>Top 10 Donors</h4>
+		<ul>
+		<% @member.top_contributors[0..9].each do |c| %>
+			<li>
+				<%= c.contributor_name %>,
+				<%= c.business_name %>:
+				<strong><%= number_to_currency(c.total_dollars, :precision => 0) %></strong>
+			</li>
+		<% end %>
+		</ul>
+    
+  </section>
+  <div id="fin_graph" class="span-8 last">
+	<h4>Funding sources</h4>
+		<%=raw "#{Gchart.pie( 
+			:data   => @member.contributions_by_geography,
+			:bg => 'eeeeee',
+			:labels => ['In-state', 'Out-of-state', 'Unknown'],
+			:size   => '300x150',
+			:bar_colors => 'AF4F4D',
+		 	:format => 'image_tag' )}" %>
+		<%=raw "#{Gchart.pie( 
+			:data   => @member.contributions_by_source,
+			:bg => 'eeeeee',
+			:labels => ['Individuals', 'Institutions', 'Party', 'Leadership PACS', 'Self', 'Other income', 'Unitemized'],
+			:size   => '300x150',
+			:bar_colors => 'AF4F4D',
+			:format => 'image_tag' )}" %>
+  </div>
+
+  <% end %>
+
+
+</section>
+
+<section id="bio" class="span-22 push-1 first last">
+    <hr />
+<h3>Biographical Information</h3>
+  <% if @bio.nil? %>
+    No biographical information available
+  <% else %>
+<ul>
+  <li><strong>Religion:</strong> <%= @bio.religion %></li>
+  <li><strong>Family:</strong> <%= @bio.family %></li>
+  <li><strong>Education:</strong> <%= @bio.education %></li>
+  <li><strong>Professional Experience:</strong> <%= @bio.profession %></li>
+  <li><strong>Political Experience:</strong> <%= @bio.political %></li>
+</ul>
+
+<% end %>
+</section>
+
+<section id="sponsorships" class="span-22 push-1 first last">
+	  <hr />
+	<div id="primbill" class="span-9 first">  <% if @member.sponsorships.primary.count > 0 %>
+		<h3>Bills sponsored: Primary</h3>
+		<table>
+			<% @member.sponsorships.primary.each do |primary| %>
+				<tr>
+					<td width="28px">
+						<% if primary.bill.is_watched_by_user?( current_user ) %>
+							<%= link_to image_tag("bt_sm_unwatch.png", :mouseover =>"bt_sm_unwatch_hvr.png"), unhot_bill_path(primary.bill), :alt=> 'Un-watch', :title => 'Un-watch', :class => 'watched'  %>
+						<% else %>
+							<%= link_to  image_tag("bt_sm_watch.png", :mouseover => "bt_sm_watch_hvr.png"), hot_bill_path(primary.bill), :alt=> 'Watch', :title => 'Watch', :class => 'unwatched' %>
+						<% end %>
+					</td>
+						<td width="45px">
+					<%= link_to primary.bill.number, bill_path( primary.bill.id ) %>
+					</td><td><%= primary.bill.short_title %>
+				</td></tr>
+				<tr><td>&nbsp;</td></tr>
+			<% end %>
+		</table>
+		<% end %>
+		</div>chuc#pin
+		
+		<div id="secbill" class="span-9 push-1 last">
+			<% if @member.sponsorships.secondary.count > 0 %>
+				<h3>Bills sponsored: Secondary</h3>
+
+				<table>
+					<% @member.sponsorships.secondary.each do |secondary| %>
+					<tr>
+						<td width="28px">
+							<% if secondary.bill.is_watched_by_user?( current_user ) %>
+								<%= link_to image_tag("bt_sm_unwatch.png", :mouseover =>"bt_sm_unwatch_hvr.png"), unhot_bill_path(secondary.bill), :alt=> 'Un-watch', :title => 'Un-watch', :class => 'watched'  %>
+							<% else %>
+								<%= link_to  image_tag("bt_sm_watch.png", :mouseover => "bt_sm_watch_hvr.png"), hot_bill_path(secondary.bill), :alt=> 'Watch', :title => 'Watch', :class => 'unwatched' %>
+							<% end %>
+						</td>
+						<td width="45px"><%= link_to secondary.bill.number, bill_path( secondary.bill.id) %> </td><td> <%= secondary.bill.short_title %></td>
+					</tr>
+						<tr><td>&nbsp;</td></tr>
+					<% end %>
+				</table>
+
+			<% end %>
+			</div>
+			<hr />
+	
+
+</section>
+<div class="span-22 first last">
+	
+<div id="links" class="span-8 push-1 last">
+	<div id='ftm' class="span-2 first"><%= link_to image_tag( 'IMSP-color.jpg', :width => '120' ), 'http://www.followthemoney.org'%></div>
+	<div id='pvs' class="span-3 push-1 last"><a href="http://www.votesmart.org/" style="font-size: 150%; text-decoration: none;">Project Vote Smart</a></div>
+	</div>
+</div>
+
+

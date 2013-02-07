@@ -7,16 +7,16 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 
+gem 'devise'
+gem 'acts-as-taggable-on'
+gem 'meta_search'
+gem 'heroku'
+
 ##1## gem 'mysql2'
 ##1## gem 'feedzirra'
-##1## gem 'heroku'
 ##1## gem 'taps'
-##1## gem 'meta_search'
-##1## gem 'acts-as-taggable-on'
 ##1## gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
 ##1## gem 'googlecharts'
-##1## gem 'devise'
-##1## gem 'jquery-rails'
 ##1## gem 'nokogiri'
 
 # Gems used only for assets and not required
@@ -38,14 +38,16 @@ group :test do
 
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem "email_spec"
 end
 
 group :development, :test do
-  ##1##   gem 'shoulda'
-  ##1##   gem 'rspec-rails', '>=2.5.0'
-  ##1##   gem 'webrat'
-  ##1##   gem 'factory_girl_rails' , :git => "http://github.com/CodeMonkeySteve/factory_girl_rails.git"
-  ##1##   gem 'faker'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'shoulda'
+  gem 'factory_girl_rails'
+  #gem 'factory_girl_rails' , :git => "http://github.com/CodeMonkeySteve/factory_girl_rails.git"
+  gem 'faker'
+  gem 'webrat'
 end
 
 # To use ActiveModel has_secure_password

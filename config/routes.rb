@@ -58,7 +58,7 @@ LegisTracker2::Application.routes.draw do
 ######################################################################
 # NEW STUFF
 
-  ##1## devise_for :users
+  devise_for :users
 
   get "statuses/index"
 

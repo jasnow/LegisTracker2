@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_accessible :user_id
+
   has_many :watched_bills
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

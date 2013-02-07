@@ -2,6 +2,9 @@ require 'bill_status_summary'
 require 'shellwords'
 
 class Bill < ActiveRecord::Base
+  attr_accessible :user_id, :btype, :num, :number, :short_title
+  attr_accessible :title, :b_status, :status_code_id, :crossover
+
   acts_as_taggable_on :topics, :hot
   
   belongs_to :house_committee

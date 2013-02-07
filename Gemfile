@@ -11,6 +11,7 @@ gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'meta_search'
 gem 'heroku'
+gem 'brakeman'
 
 ##1## gem 'mysql2'
 ##1## gem 'feedzirra'

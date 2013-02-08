@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :user_id
+  attr_accessible :id, :user, :user_id
 
   has_many :watched_bills
   # Include default devise modules. Others available are:

@@ -1,6 +1,9 @@
 require 'votes_summary'
 
 class Vote < ActiveRecord::Base
+
+  attr_accessible :date, :description, :yea, :nay, :branch, :legislation
+
   belongs_to :bill
   has_many :member_votes
   acts_as_taggable_on :key

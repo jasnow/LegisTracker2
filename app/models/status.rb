@@ -1,4 +1,7 @@
 class Status < ActiveRecord::Base
+
+  attr_accessible :status_date, :status_code_id
+
   belongs_to :bill
   belongs_to :status_code
   delegate :hot_list, :to => :bill

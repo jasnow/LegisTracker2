@@ -2,9 +2,9 @@ require 'bill_status_summary'
 require 'shellwords'
 
 class Bill < ActiveRecord::Base
-  attr_accessible :id, :btype, :num, :number, :short_title
+  attr_accessible :btype, :num, :number, :short_title
   attr_accessible :title, :b_status, :status_code_id, :crossover
-  attr_accessible :user_id, :user, :bill_id
+  attr_accessible :id, :user_id, :user, :bill_id
 
   acts_as_taggable_on :topics, :hot
   

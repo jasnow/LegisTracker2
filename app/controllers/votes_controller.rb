@@ -6,7 +6,7 @@ class VotesController < ApplicationController
     @repub_votes = @vote.member_votes.republican.order_by_district
     @demo_votes = @vote.member_votes.democrat.order_by_district
   end
-  
+
   def key
     @vote = Vote.find( params[:id] )
     @vote.key_list.add( 'key' )
@@ -17,7 +17,7 @@ class VotesController < ApplicationController
     end
     redirect_to( @vote )
   end
-  
+
   def unkey
     @vote = Vote.find( params[:id] )
     @vote.key_list.remove( 'key' )

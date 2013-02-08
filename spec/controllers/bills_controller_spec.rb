@@ -5,7 +5,7 @@ describe BillsController do
     @user = FactoryGirl.create( :user )
     sign_in @user
   end
-  
+
   describe BillsController, '#index' do
     before( :each ) do
       get :index
@@ -44,7 +44,7 @@ describe BillsController do
       { :get => search_path }.should route_to( :controller => "bills", :action => "search" )
     end
   end
-  
+
   describe BillsController, '#hot' do
     before( :each ) do
       @bill = FactoryGirl.create( :bill )
@@ -56,7 +56,7 @@ describe BillsController do
       { :get => hot_bill_path }.should route_to( :controller => "bills", :action => "hot", :id => @bill.to_param )
     end
   end
-  
+
   describe BillsController, '#unhot' do
     before( :each ) do
       @bill = FactoryGirl.create( :bill )
@@ -71,7 +71,7 @@ describe BillsController do
       { :get => unhot_bill_path }.should route_to( :controller => "bills", :action => "unhot", :id => @bill.to_param )
     end
   end
-  
+
   describe BillsController, '#add_tag' do
     before( :each ) do
       @bill = FactoryGirl.create( :bill )

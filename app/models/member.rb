@@ -2,30 +2,30 @@ class Member < ActiveRecord::Base
   has_many :sponsorships
   has_many :member_votes
   has_many :bills, :through => :sponsorships
-  
+
   scope :democrats,   where( :party => 'D' )
   scope :republicans, where( :party => 'R' )
   scope :find_by_party, lambda { |party| where( "party = ?", party ) }
   scope :reps,     where( :house => 'H' )
   scope :senators, where( :house => 'S' )
   scope :find_by_house, lambda { |house| where( "house = ?", house ) }
-  
+
   def name
     "#{last_name}, #{first_name}"
   end
-  
+
   def display_name
     "#{first_name} #{last_name}"
   end
-  
+
   def district_name
     "#{house}#{district}"
   end
-  
+
   def primary_sponsorships
     sponsorships.primary
   end
-  
+
   def secondary_sponsorships
     sponsorships.secondary
   end
@@ -37,7 +37,7 @@ class Member < ActiveRecord::Base
   def percent_out_of_state
     total_out_of_state_dollars / total_dollars.to_f * 100
   end
-  
+
   def percent_unknown_state
     total_unknown_state_dollars / total_dollars.to_f * 100
   end
@@ -49,7 +49,7 @@ class Member < ActiveRecord::Base
   def percent_party_committee
     party_committee_dollars / total_dollars.to_f * 100
   end
-  
+
   def percent_leadership_committee
     leadership_committee_dollars / total_dollars.to_f * 100
   end
@@ -78,7 +78,7 @@ class Member < ActiveRecord::Base
     [percent_individuals, percent_institutions, percent_party_committee, percent_leadership_committee,
      percent_self_finance, percent_noncontribution_income, percent_unitemized]
   end
-  
+
   def top_contributors
     begin
       imsp_member_id ? GovKit::FollowTheMoney::Contribution.top( imsp_member_id ) : nil
@@ -86,7 +86,7 @@ class Member < ActiveRecord::Base
       nil
     end
   end
-  
+
   def contributions_by_sector
     begin
       imsp_member_id ? GovKit::FollowTheMoney::SectorContribution.find( imsp_member_id ) : nil
@@ -94,7 +94,7 @@ class Member < ActiveRecord::Base
       nil
     end
   end
-  
+
   def contributions_by_industry
     begin
       imsp_member_id ? GovKit::FollowTheMoney::IndustryContribution.find( imsp_member_id ) : nil
@@ -102,7 +102,7 @@ class Member < ActiveRecord::Base
       nil
     end
   end
-  
+
   def contributions_by_business
     begin
       imsp_member_id ? GovKit::FollowTheMoney::BusinessContribution.find( imsp_member_id ) : nil
@@ -126,7 +126,7 @@ class Member < ActiveRecord::Base
       nil
     end
   end
-  
+
   def self.load_imsp_data
     [ 'HOUSE', 'SENATE' ].each do |house|
       puts "Getting #{house} candidates"

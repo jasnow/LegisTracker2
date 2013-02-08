@@ -69,11 +69,11 @@ LegisTracker2::Application.routes.draw do
     resources :statuses
     resources :sponsorships
   end
-  
+
   resources :members do
     resources :sponsorships
   end
-  
+
   resources :votes do
     resources :bills
   end

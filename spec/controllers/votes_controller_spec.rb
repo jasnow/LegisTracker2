@@ -17,7 +17,7 @@ describe VotesController do
     it { should assign_to( :title ).with( "#{@vote.legislation}: #{@vote.description}" ) }
     it { should assign_to( :bill ).with( @vote.bill ) }
   end
-  
+
   describe VotesController, '#key' do
     before( :each ) do
       @vote = FactoryGirl.create( :vote )

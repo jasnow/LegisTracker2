@@ -6,16 +6,19 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+#gem 'pg'
+gem 'taps'
 
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'meta_search'
 gem 'heroku'
-gem 'brakeman'
+
+gem 'jquery-rails'
 
 ##1## gem 'mysql2'
 ##1## gem 'feedzirra'
-##1## gem 'taps'
+
 ##1## gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
 ##1## gem 'googlecharts'
 ##1## gem 'nokogiri'
@@ -32,16 +35,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
-group :test do
-  gem 'cucumber-rails', :require => false
-
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
-  gem "email_spec"
-end
-
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'
@@ -49,6 +42,21 @@ group :development, :test do
   #gem 'factory_girl_rails' , :git => "http://github.com/CodeMonkeySteve/factory_girl_rails.git"
   gem 'faker'
   gem 'webrat'
+
+  # Analysis Gems
+  gem 'brakeman'
+  gem 'cane'
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem "email_spec"
+
+  # Analysis Gems
+  gem 'simplecov', :require => false
 end
 
 # To use ActiveModel has_secure_password

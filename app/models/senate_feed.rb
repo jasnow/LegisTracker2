@@ -15,7 +15,7 @@ class SenateFeed < ActiveRecord::Base
       end
     end
   end
-  
+
   def self.find_recent( count = 5 )
     order( 'published_at DESC' ).limit( count )
   end

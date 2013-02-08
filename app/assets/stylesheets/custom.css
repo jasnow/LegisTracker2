@@ -14,33 +14,33 @@ a:focus {color:#274385;}
 /* FORMS
 --------------------------------------------------------------------------------- */
 input[type=image] { /* form input images */
-	margin:0.5em 0; 
+	margin:0.5em 0;
 	vertical-align:bottom;
-} 
+}
 input[type=image]:hover{
 	-webkit-transform: scale(1.25);
 	-moz-transform: scale(1.25);
 	transform:scale(1.25);
 }
 input[type="submit"] { /* Assistance by a book apart */
-	padding: 5px 10px; 
-	color: #444; 
+	padding: 5px 10px;
+	color: #444;
 	font-weight:bold;
 	text-shadow: 0 1px rgba(255,255,255, 0.85);
-	border: 1px solid #777; 
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#bbb)); 
+	border: 1px solid #777;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#bbb));
 	background-image: -moz-linear-gradient(0 100% 90deg, #eee, #bbb);
-	background-color: #333; 
-	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); 
-	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); 
+	background-color: #333;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 input[type="submit"]:hover {
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#eee)); 
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#eee));
 	background-image: -moz-linear-gradient(0 100% 90deg, #ccc, #eee);
-	background-color: #333; 
-	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5); 
-	-moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5); 
+	background-color: #333;
+	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -58,7 +58,7 @@ input[type="submit"]:hover {
 
 
 
-                       
+
 /* DIV AND OTHER BLOCK STYLES*/
 
 /* APPLICATION TEMPLATE
@@ -97,12 +97,12 @@ nav ul a{
 	font-size: 12px;
 	text-decoration: none;
 	text-shadow:0 1px 0 black;
-	-webkit-transition-property: background; 
-	-webkit-transition-duration: 0.5s; 
+	-webkit-transition-property: background;
+	-webkit-transition-duration: 0.5s;
 	-webkit-transition-timing-function: ease;
 	-webkit-transition-delay: 0.5s;
-	-moz-transition-property: background; 
-	-moz-transition-duration: 0.3s; 
+	-moz-transition-property: background;
+	-moz-transition-duration: 0.3s;
 	-moz-transition-timing-function: ease;
 	-moz-transition-delay: 0.5s;
 }
@@ -116,7 +116,7 @@ nav ul a:focus {
 	text-shadow:0 1px 0 black;
 	background: -moz-linear-gradient(top, #2A587A, #3774A2);
 	background: -webkit-gradient(linear, left top, left bottom, from(#2A587A), to(#3774A2));
-	-moz-border-radius: 10px 10px 0px 0px; 
+	-moz-border-radius: 10px 10px 0px 0px;
 	border-radius: 10px 10px 0px 0px;
 }
 
@@ -127,7 +127,7 @@ nav li a.current {
 	color: black;
 	font-weight:bold;
 	text-shadow:none;
-	-moz-border-radius: 10px 10px 0px 0px; 
+	-moz-border-radius: 10px 10px 0px 0px;
 	border-radius: 10px 10px 0px 0px;
 	background: #ffffff; /* old browsers */
 	background: -moz-linear-gradient(top, #EEEEEE 0%, #FFFFFF 80%); /* firefox */
@@ -175,24 +175,24 @@ nav li a.current {
 #billdata {float:left;}
 
 
-/*RSS FEEDS 
+/*RSS FEEDS
 ----------------------------------------------*/	
-#feeds { 
+#feeds {
 	/*This is the background gray box*/
 	z-index:2;
-	position:absolute;  
-	bottom:10px; 
-	top:-1.5em; 
-	right: 10px; 
-	padding:2em; 
-	padding-bottom:0; 
+	position:absolute;
+	bottom:10px;
+	top:-1.5em;
+	right: 10px;
+	padding:2em;
+	padding-bottom:0;
 	padding-right:1em;
 	background:#e5e5e5;
 	background: -moz-linear-gradient(top, #aaa 0%, #eeeeee 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aaa), color-stop(100%,#eeeeee)); /* webkit */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#aaa',GradientType=0 ); /* ie */
-	-moz-border-radius: 0 0 10px 10px; 
-	-webkit-border-radius: 0 0 10px 10px; 
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
 	border-radius: 0 0 10px 10px;
 	border:solid 1px #ggg;
 	border-top:none;
@@ -203,24 +203,24 @@ nav li a.current {
 	box-shadow: inset 0px 0px 1em .25em #888;
 	}
 	
-#feedbox { 
+#feedbox {
 	/*this is the holder div for the rss content feeds */
-	z-index:3; 
-	position:relative; 
-	margin-right: 10px; 
-	margin-top: -0.5em; 
-	height:100%; 
-	bottom:0; 
-	top:0px; 
-	right:0px; 
-	padding:2em; 
-	padding-left:2em; 
+	z-index:3;
+	position:relative;
+	margin-right: 10px;
+	margin-top: -0.5em;
+	height:100%;
+	bottom:0;
+	top:0px;
+	right:0px;
+	padding:2em;
+	padding-left:2em;
 	padding-right:1em;
-	height:100%; 
-	bottom:0; 
-	top:0px; 
-	right:0px; 
-	padding:2em; 
+	height:100%;
+	bottom:0;
+	top:0px;
+	right:0px;
+	padding:2em;
 	padding-right:1em;
 	}
 	
@@ -294,8 +294,8 @@ nav li a.current {
 	float:right;
 	background: #eee;
 	border-radius: 10px;
-	-moz-border-radius: 10px; 
-	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
 
@@ -309,8 +309,8 @@ nav li a.current {
 	background: #A27737;
 	border: 2px solid #553B14;
 	border-radius: 10px;
-	-moz-border-radius: 10px; 
-	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
 
@@ -333,7 +333,7 @@ nav li a.current {
     padding:.3em .4em;
     margin-top: 1em;
     clear: both;
-    max-width:  100%; /* 610/13 */  
+    max-width:  100%; /* 610/13 */
     *max-width: 100%; /* 610/13.3333 - for IE */
 }
 .flash.error { border: thin solid #8b0000; background: #ffc0cb; }
@@ -345,7 +345,7 @@ nav li a.current {
 
 
 
-/*CUSTOM SCROLL BARS 
+/*CUSTOM SCROLL BARS
 -----------------------------------------------*/
 
 #status .customScrollBox,
@@ -356,7 +356,7 @@ nav li a.current {
 	position:relative; overflow:hidden; height:44em;
 	}
 	
-#status .customScrollBox .container, 
+#status .customScrollBox .container,
 #votes  .customScrollBox .container,
 #house .customScrollBox .container,
 #senate .customScrollBox .container
@@ -364,35 +364,35 @@ nav li a.current {
 	position:relative; top:0; float:left;
 	}
 	
-#status .customScrollBox .content, 
+#status .customScrollBox .content,
 #votes  .customScrollBox .content,
-#house .customScrollBox .content, 
+#house .customScrollBox .content,
 #senate  .customScrollBox .content
  {
-	clear:both; 
+	clear:both;
 	}
 
 /* GLOBAL DRAGGER CONTAINER*/
-#votes .dragger_container, 
+#votes .dragger_container,
 #status .dragger_container,
-#house .dragger_container, 
+#house .dragger_container,
 #senate .dragger_container
- 
+
 {
 	z-index:12;
-	position:absolute; 
+	position:absolute;
 	top:1.5em;
 	bottom:1.5em;
 	/*margin-left determines alignment with scrolling content -- adjust this in specific style for that div.*/
-	width:2px; 
+	width:2px;
 	height:41em;
 	float:left;
-	background:#eee; 
+	background:#eee;
 	cursor:pointer;
-	 -moz-border-radius:2px; 
-	-khtml-border-radius:2px; 
-	-webkit-border-radius:2px; 
-	border-radius:2px; 
+	 -moz-border-radius:2px;
+	-khtml-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
 	cursor:s-resize;	
 	}
 
@@ -401,53 +401,53 @@ nav li a.current {
 #status .dragger_container { right:29px; } /* home: status */
 #house .dragger_container, #senate .dragger_container
 {
-	 right:29px; 
-	} 
+	 right:29px;
+	}
 
-#status .dragger, 
+#status .dragger,
 #votes .dragger,
-#house .dragger, 
+#house .dragger,
 #senate .dragger
 {
-	position:absolute; 
+	position:absolute;
 	z-index:13;
-	width:7px; 
-	height:18px; 
+	width:7px;
+	height:18px;
 	right:-3px;
-	background:#3774A2; 
-	text-align:center; 
-	line-height:60px; 
-	color:#3774A2; 
-	overflow:hidden; 
-	cursor:pointer; 
-	-moz-border-radius:2px; 
-	-khtml-border-radius:2px; 
-	-webkit-border-radius:2px; 
+	background:#3774A2;
+	text-align:center;
+	line-height:60px;
+	color:#3774A2;
+	overflow:hidden;
+	cursor:pointer;
+	-moz-border-radius:2px;
+	-khtml-border-radius:2px;
+	-webkit-border-radius:2px;
 	border-radius:2px;
 	}
 	
-#status .dragger_pressed, 
+#status .dragger_pressed,
 #votes .dragger_pressed,
-#house .dragger_pressed, 
+#house .dragger_pressed,
 #senate .dragger_pressed
 {
 	
-	-moz-border-radius:4px; 
-	-khtml-border-radius:4px; 
-	-webkit-border-radius:4px; 
-	border-radius:4px; 
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
 	cursor:s-resize;
 	}
 
 #status .scrollUpBtn,
-#status .scrollDownBtn, 
+#status .scrollDownBtn,
 #votes .scrollUpBtn,
 #votes .scrollDownBtn,
 #house .scrollUpBtn,
 #house .scrollDownBtn,
 #senate .scrollUpBtn,
 #senate .scrollDownBtn
-{ 
+{
 	position:absolute; display:inline-block; width:14px; height:15px; text-decoration:none; right:0; filter:alpha(opacity=20); -moz-opacity:0.20; -khtml-opacity:0.20; opacity:0.20;
 	}
 
@@ -462,7 +462,7 @@ nav li a.current {
 #house .scrollDownBtn, #senate .scrollDownBtn {bottom:0px; right:32px; }
 
 #status .scrollUpBtn:hover,
-#status .scrollDownBtn:hover, 
+#status .scrollDownBtn:hover,
 #votes .scrollUpBtn:hover,
 #votes .scrollDownBtn:hover
 

@@ -12,7 +12,7 @@ class BillsController < ApplicationController
   def search
     @title = "Advanced Search"
   end
-  
+
   def hot
     @bill = Bill.find( params[:id] )
     watched_bill = @bill.watched_bills.new( :user_id => current_user.id )
@@ -23,7 +23,7 @@ class BillsController < ApplicationController
     end
     redirect_to( @bill )
   end
-  
+
   def unhot
     @bill = Bill.find( params[:id] )
     watched_bill = @bill.watched_bills.where( :user_id => current_user.id ).first
@@ -34,7 +34,7 @@ class BillsController < ApplicationController
     end
     redirect_to( @bill )
   end
-  
+
   def add_tag
     @bill = Bill.find( params[:id] )
     @bill.tag_list_on( params[:context].to_sym ).add( params[:tag] )

@@ -15,7 +15,7 @@ class VotesSummary
     @xml_string = fetch( @url )
 
     doc = Nokogiri::XML( @xml_string )
-    vote_nodes = doc.xpath( xp[@house.to_sym] ) 
+    vote_nodes = doc.xpath( xp[@house.to_sym] )
     @vote_details = vote_nodes.map { |node| VoteDetail.new( node ) }
   end
 

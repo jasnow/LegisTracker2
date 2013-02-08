@@ -5,7 +5,7 @@ class VoteDetail
     @node = node
     @totals = @node.children[0]
     member_nodes = @node.children.reject {|c| c.name != 'member' }
-    
+
     @members = []
     member_nodes.each do |m|
       attr = Hash.new

@@ -13,7 +13,7 @@
 			<%= link_to  image_tag("bt_sm_watch.png", :mouseover => "bt_sm_watch_hvr.png"), hot_bill_path( @bill ), :alt=> 'Watch', :title => 'Watch', :class => 'unwatched' %>
 		<% end %>
 	</div>
-  
+
 	<div id="billtitle" class="span-19 last">
 		<h2><%= @bill.number %>: <%= @bill.short_title %></h2>
 	</div>
@@ -78,7 +78,7 @@
       <li><span class="tstamp"><%= status.status_date.strftime( '%Y-%m-%d' ) %> </span> <%= status.status_code.description %></li>
     <% end %>
   </ul>
- 
+
 </section>
 
 <section id="votes" class="span-5 last">

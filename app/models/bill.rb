@@ -7,7 +7,7 @@ class Bill < ActiveRecord::Base
   attr_accessible :id, :user_id, :user, :bill_id
 
   acts_as_taggable_on :topics, :hot
-  
+
   belongs_to :house_committee
   belongs_to :senate_committee
   has_many :statuses
@@ -34,33 +34,33 @@ class Bill < ActiveRecord::Base
     joins("join sponsorships on sponsorships.bill_id = bills.id join members on members.id = sponsorships.member_id").
     where( "sponsorships.seq = 1 and members.party = ?", party )
   }
-  
+
   scope :status_history, lambda { |text|
     joins( "JOIN statuses ON statuses.bill_id = bills.id JOIN status_codes ON statuses.status_code_id = status_codes.id" ).
     where( "status_codes.description like ?", "%#{text}%" )
   }
-  
+
   scope :my_watched_bills, lambda { |user|
     joins( "JOIN watched_bills ON watched_bills.bill_id = bills.id" ).
     where( "watched_bills.user_id = ?", user )
   }
-  
+
   scope :topic_includes, lambda { |text| tagged_with( text, :on => :topics ) }
   scope :crossed_over, where( "crossover = 1" )
   scope :order_by_status_date_desc, order( 'current_status_date DESC' )
-  
+
   def is_watched_by_user?( user )
     watched_bills.where( :user_id => user ).count > 0 ? true : false
   end
-  
+
   def house_committee_name
     house_committee ? house_committee.committee_name : ''
   end
-  
+
   def senate_committee_name
     senate_committee ? senate_committee.committee_name : ''
   end
-  
+
   def statuses_most_recent
     statuses.most_recent_status
   end
@@ -72,7 +72,7 @@ class Bill < ActiveRecord::Base
   def sponsor_count
     sponsorships.count
   end
-  
+
   def primary_sponsor
     sponsorships.primary.first
   end
@@ -88,16 +88,16 @@ class Bill < ActiveRecord::Base
   def primary_sponsor_party
     primary_sponsor.member.party
   end
-  
+
   def self.hot
     scoped
     tagged_with( 'hot' )
   end
-  
+
   def is_hot?
     hot_list.include?( 'hot' )
   end
-  
+
   def latest_version
     bill_versions.latest
   end
@@ -151,7 +151,7 @@ class Bill < ActiveRecord::Base
               bill_record.save
             end
           end
-          
+
           bill.Sponsors.each do |s|
             Sponsorship.create!(
               :bill_id   => bill.Id.to_i,
@@ -159,7 +159,7 @@ class Bill < ActiveRecord::Base
               :seq       => s['Seq']
             )
           end
-          
+
           bill.version_data_array.each do |v|
             BillVersion.create!(
               :bill_id => v[0],

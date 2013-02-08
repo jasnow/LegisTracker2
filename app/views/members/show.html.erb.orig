@@ -8,7 +8,7 @@
   <h2>
     <%= @member.name %>
     <span class="memid">
-      <%= @member.seat %> 
+      <%= @member.seat %>
       <%= @member.party %>
     </span>
   </h2>
@@ -34,13 +34,13 @@
     </p>
   </div>
   <div class="span-9 push-1">
-		<%=raw "#{Gchart.pie( 
+		<%=raw "#{Gchart.pie(
 			:data   => @member.contributions_by_geography,
 			:labels => ['In-state', 'Out-of-state', 'Unknown'],
 			:size   => '300x150',
 			:bar_colors => 'AF4F4D',
 		 	:format => 'image_tag' )}" %>
-		<%=raw "#{Gchart.pie( 
+		<%=raw "#{Gchart.pie(
 			:data   => @member.contributions_by_source,
 			:labels => ['Individuals', 'Institutions', 'Party', 'Leadership PACS', 'Self', 'Other income', 'Unitemized'],
 			:size   => '300x150',

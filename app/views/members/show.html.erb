@@ -2,7 +2,7 @@
   <h2>
     <%= @member.name %>
     <span class="memid">
-      <%= @member.seat %> 
+      <%= @member.seat %>
       <%= @member.party %>
     </span>
   </h2>
@@ -25,18 +25,18 @@
 			</li>
 		<% end %>
 		</ul>
-    
+
   </section>
   <div id="fin_graph" class="span-8 last">
 	<h4>Funding sources</h4>
-		<%=raw "#{Gchart.pie( 
+		<%=raw "#{Gchart.pie(
 			:data   => @member.contributions_by_geography,
 			:bg => 'eeeeee',
 			:labels => ['In-state', 'Out-of-state', 'Unknown'],
 			:size   => '300x150',
 			:bar_colors => 'AF4F4D',
 		 	:format => 'image_tag' )}" %>
-		<%=raw "#{Gchart.pie( 
+		<%=raw "#{Gchart.pie(
 			:data   => @member.contributions_by_source,
 			:bg => 'eeeeee',
 			:labels => ['Individuals', 'Institutions', 'Party', 'Leadership PACS', 'Self', 'Other income', 'Unitemized'],

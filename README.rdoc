@@ -4,11 +4,12 @@ This is a Ruby-on-Rails web applicqation which allows users to track legislation
 
 == Requirements
 
-Ruby 1.9.2; Rails 3.0.3. To install gems: <tt>bundle install</tt>.
+Ruby 1.9.3; Rails 3.2.11. To install gems: <tt>bundle install</tt>.
 
 == Setup
 
 1. Configure a <tt>config/database.yml</tt> file to point to your database server.
+
 2. Create databases and tables:
 
     rake db:create
@@ -26,6 +27,10 @@ Ruby 1.9.2; Rails 3.0.3. To install gems: <tt>bundle install</tt>.
 
 == Resources
 
-The House bill status xml feed can be found at ::  http://www1.legis.ga.gov/legis/2011_12/list/BillSummary.xml
-The House vote xml feed can be found at ::  http://www1.legis.ga.gov/legis/2011_12/list/HouseVotes.xml
-The Senate vote xml feed can be found at ::  http://www1.legis.ga.gov/legis/2011_12/list/SenateVotes.xml
+The House bill status xml feed can be found at ::
+    http://www1.legis.ga.gov/legis/2011_12/list/BillSummary.xml
+The House vote xml feed can be found at ::
+    http://www1.legis.ga.gov/legis/2011_12/list/HouseVotes.xml
+The Senate vote xml feed can be found at ::
+    http://www1.legis.ga.gov/legis/2011_12/list/SenateVotes.xml
+

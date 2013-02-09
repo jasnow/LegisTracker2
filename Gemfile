@@ -16,12 +16,11 @@ gem 'heroku'
 
 gem 'jquery-rails'
 
-##1## gem 'mysql2'
-##1## gem 'feedzirra'
-
-##1## gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
-##1## gem 'googlecharts'
-##1## gem 'nokogiri'
+#TODO: gem 'mysql2'
+#TODO: gem 'feedzirra'
+#TODO: gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
+#TODO: gem 'googlecharts'
+#TODO: gem 'nokogiri'
 
 # Gems used only for assets and not required
 # in production environments by default.

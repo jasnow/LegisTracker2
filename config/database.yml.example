@@ -12,7 +12,7 @@ development:
   database: legislature
   pool: 5
   username: john
-  password: ASK-ME
+  password: ENV["DB_PW"]
   socket: /var/lib/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -25,7 +25,7 @@ test:
   database: legislature_test
   pool: 5
   username: john
-  password: ASK-ME
+  password: ENV["DB_PW"]
   socket: /var/lib/mysql/mysql.sock
 
 production:

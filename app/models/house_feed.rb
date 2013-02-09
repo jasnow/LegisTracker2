@@ -1,4 +1,6 @@
 class HouseFeed < ActiveRecord::Base
+  attr_accessible :title, :summary, :author, :url, :published_at, :guid
+
   def self.update_from_feed( feed_url = 'http://www.house-press.com/?feed=rss2' )
     feed = Feedzirra::Feed.fetch_and_parse( feed_url )
     feed.sanitize_entries!

@@ -5,9 +5,11 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# DATABASE-RELATED
 gem 'sqlite3'
 #gem 'pg'
 gem 'taps'
+#TODO: gem 'mysql2'
 
 gem 'devise'
 gem 'acts-as-taggable-on'
@@ -16,11 +18,10 @@ gem 'heroku'
 
 gem 'jquery-rails'
 
-#TODO: gem 'mysql2'
-#TODO: gem 'feedzirra'
+gem 'feedzirra'
+gem 'googlecharts'
+
 #TODO: gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
-#TODO: gem 'googlecharts'
-#TODO: gem 'nokogiri'
 
 # Gems used only for assets and not required
 # in production environments by default.

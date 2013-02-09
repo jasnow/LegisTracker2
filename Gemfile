@@ -21,7 +21,7 @@ gem 'jquery-rails'
 gem 'feedzirra'
 gem 'googlecharts'
 
-#TODO: gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
+gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
 
 # Gems used only for assets and not required
 # in production environments by default.

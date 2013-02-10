@@ -153,12 +153,10 @@ nav li a.current {
 	left:0px;
 	bottom:0px;
 	padding-top:1.5em;
-	background: #3774A2;100%
-	background: -moz-linear-gradient(top,  #234B69, #3774A2);100%
+	background: #3774A2; height:100%;
+	background: -moz-linear-gradient(top,  #234B69, #3774A2); height:100%;
 	background: -webkit-gradient(linear, left top, left bottom, from(#234B69), to(#3774A2));
 	}
-
-
 	
 #footer {z-index:4; position:relative; background: #3774A2;  height: 25px;}
 #footer p {color:white; padding-top:.3em; text-align:center;}
@@ -171,7 +169,7 @@ nav li a.current {
 #vote_content {}
 #status {}
 #status_content {}
-#button {margin:0; margin-top:-0px; padding-top:0px;  clear:both; float;left; }
+#button {margin:0; margin-top:0px; padding-top:0px;  clear:both; float:left; }
 #billdata {float:left;}
 
 
@@ -194,10 +192,10 @@ nav li a.current {
 	-moz-border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
 	border-radius: 0 0 10px 10px;
-	border:solid 1px #ggg;
+	border:solid 1px #fff;
 	border-top:none;
 	opacity:0.8;
-	filter:alpha (opacity=80);
+	filter:alpha(opacity=80);
 	-moz-box-shadow: inset 0px 0px 1em 1em #888;
 	-webkit-box-shadow: inset 0px 0px 1em 1em #888;
 	box-shadow: inset 0px 0px 1em .25em #888;
@@ -263,7 +261,7 @@ nav li a.current {
 ------------------------------------------- */
 
 /* WATCH & UNWATCH BUTTON */
-#key { clear:both; float:left;  width:22px; margin:5px; margin-left:0; padding:3px; padding-bottom:0px; margin-top:2.5I em; }
+#key { clear:both; float:left;  width:22px; margin:5px; margin-left:0; padding:3px; padding-bottom:0px; margin-top:2.5em; }
 #key a img { }
 #key a:hover img,
 #key a:focus img { }
@@ -473,4 +471,4 @@ nav li a.current {
 {
 	filter:alpha(opacity=60); -moz-opacity:0.60; -khtml-opacity:0.60; opacity:0.60;
 	}
-/*END CUSTOMER SCROLL BARS ---------------------------------------------------------------------------------------/
+/* END CUSTOMER SCROLL BARS --------------------------------------------------------------------------------------- */

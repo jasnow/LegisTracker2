@@ -285,6 +285,7 @@ DEPENDENCIES
   heroku
   jquery-rails
   meta_search
+  nokogiri
   pg
   rails (= 3.2.11)
   rspec-rails (~> 2.0)

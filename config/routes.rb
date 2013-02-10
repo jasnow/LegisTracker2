@@ -1,4 +1,7 @@
 LegisTracker2::Application.routes.draw do
+
+  break if ARGV.join.include? 'assets:precompile'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -5,12 +5,6 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# DATABASE-RELATED
-gem 'sqlite3'
-#gem 'pg'
-gem 'taps'
-#TODO: gem 'mysql2'
-
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'meta_search'
@@ -36,6 +30,12 @@ group :assets do
 end
 
 group :development, :test do
+  # DATABASE-RELATED
+  gem 'sqlite3'
+  #gem 'pg'
+  gem 'taps'
+  #TODO: gem 'mysql2'
+
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'
   gem 'factory_girl_rails'
@@ -57,6 +57,10 @@ group :test do
 
   # Analysis Gems
   gem 'simplecov', :require => false
+end
+
+group :production, :staging do
+  gem "pg"
 end
 
 # To use ActiveModel has_secure_password

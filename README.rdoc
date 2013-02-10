@@ -20,10 +20,14 @@ Ruby 1.9.3; Rails 3.2.11. To install gems: <tt>bundle install</tt>.
 
     Bill.reload_from_xml
 
+    rake db:reload_from_xml
+
 4. Load RSS feeds from the rails console:
 
     HouseFeed.update_from_feed
     SenateFeed.update_from_feed
+
+    rake db:update_from_feeds
 
 == Resources
 

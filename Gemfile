@@ -13,7 +13,10 @@ gem 'meta_search'
 
 gem 'jquery-rails'
 
-gem 'feedzirra'
+# 2/10/2013: Need git version to get rid of following error messages:
+#            output error : unknown encoding ASCII-8BIT
+gem 'feedzirra', :git => 'git://github.com/pauldix/feedzirra.git'
+
 gem 'googlecharts'
 
 gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"

@@ -11,7 +11,10 @@ class BillStatusSummary
     @url = url
     @xml_string = fetch( @url )
 #    @bills = parse( @xml_string )
+puts "TODO: Deal with empty XML file"
+puts "TODO:/BEFORE: @xml_string=[" + @xml_string.inspect + "]"
     doc = Nokogiri::XML( @xml_string )
+puts "TOOD:/AFTER"
     @bill_nodes = doc.xpath( '//Bill' )
     @bill_count = @bill_nodes.size
     @bills = @bill_nodes.map { |bill| BillStatus.new( bill ) }

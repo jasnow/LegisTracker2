@@ -8,7 +8,8 @@ gem 'rails', '3.2.11'
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'meta_search'
-gem 'heroku'
+
+# (now use heroku toolbelt) gem 'heroku'
 
 gem 'jquery-rails'
 

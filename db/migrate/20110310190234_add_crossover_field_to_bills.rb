@@ -1,6 +1,6 @@
 class AddCrossoverFieldToBills < ActiveRecord::Migration
   def self.up
-    add_column :bills, :crossover, :boolean, :default => 0
+    add_column :bills, :crossover, :boolean, :default => true
   end
 
   def self.down

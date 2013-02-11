@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
@@ -11,8 +10,6 @@ gem 'acts-as-taggable-on'
 gem 'meta_search'
 
 # (now use heroku toolbelt) gem 'heroku'
-
-gem 'jquery-rails'
 
 # 2/10/2013: Need git version to get rid of following error messages:
 #            output error : unknown encoding ASCII-8BIT
@@ -35,6 +32,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'jquery-rails'
 
 group :development, :test do
   # DATABASE-RELATED

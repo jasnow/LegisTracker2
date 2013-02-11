@@ -11,6 +11,12 @@ LegisTracker2::Application.configure do
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"
 
+  # 3/11/2013: NOTE: Added these lines but commented them out 
+  #    because 3.2 removed them from auto-generated. 
+  # Allow pass debug_assets=true as a query parameter to load pages with 
+  #    unpackaged assets
+  #config.assets.allow_debugging = true
+
   # Log error messages when you accidentally call methods on nil
   config.whiny_nils = true
 

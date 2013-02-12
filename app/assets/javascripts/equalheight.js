@@ -8,7 +8,7 @@
 * The following source code is a modified version of the original plugin "EqualHeights" for jQuery.
 *
 * JQuery Plugin: "EqualHeights"
-* by:&nbsp;&nbsp; &nbsp;Scott Jehl, Todd Parker, Maggie Costello Wachs (http://www.filamentgroup.com)
+* by:    Scott Jehl, Todd Parker, Maggie Costello Wachs (http://www.filamentgroup.com)
 *
 * Copyright (c) 2009 Filament Group
 * Licensed under GPL (http://www.opensource.org/licenses/gpl-license.php)
@@ -16,6 +16,13 @@
 * JQuery Plugin : "EqualHeights-Light"
 * Modified by : Michael (http://www.webdevcodex.com)
 * Description : Does not use px-em dependencies based from the original version. Also fixes a small bug which does not allow divs to be of equal heights if there are more than 2 divs.
+
+Example code:
+jQuery(document).ready(
+  function(){
+    jQuery(".equal_height").equalheight();
+  }
+);
 
 ------------------------------------------------------------------------*/
 
@@ -26,7 +33,7 @@ var currentTallest = 0; //create currentTallest var
 //go through every child of the mother div
 jQuery(this).children().each(function(i){
 //keep checking every child's height and get the height of the tallest div
-if (jQuery(this).height() &gt; currentTallest) { currentTallest = jQuery(this).height(); }
+if (jQuery(this).height() > currentTallest) { currentTallest = jQuery(this).height(); }
 
 });
 
@@ -34,9 +41,9 @@ if (jQuery(this).height() &gt; currentTallest) { currentTallest = jQuery(this).h
 currentTallest = currentTallest+"px";
 
 //If browser is Microsoft Internet explorer, then use css "height: yypx"
-if (jQuery.browser.msie &amp;&amp; jQuery.browser.version == 6.0) { jQuery(this).children().css({'height': currentTallest}); }
+if (jQuery.browser.msie && jQuery.browser.version == 6.0) { jQuery(this).children().css({'height': currentTallest}); }
 
-//use css "min-height: yypx"
+//use css "min-height or height: yypx"
 jQuery(this).children().css({'min-height': currentTallest});
 });
 return this;

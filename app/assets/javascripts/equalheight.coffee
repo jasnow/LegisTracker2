@@ -4,6 +4,7 @@
   </head>
 <body>
 <pre>
+###
 /*--------------------------------------------------------------------
 * The following source code is a modified version of the original plugin "EqualHeights" for jQuery.
 *
@@ -17,17 +18,10 @@
 * Modified by : Michael (http://www.webdevcodex.com)
 * Description : Does not use px-em dependencies based from the original version. Also fixes a small bug which does not allow divs to be of equal heights if there are more than 2 divs.
 
-Example code:
-jQuery(document).ready(
-  function(){
-    jQuery(".equal_height").equalheight();
-  }
-);
-
 2/12/2013: Convert javascript to coffescript.
 
 ------------------------------------------------------------------------*/
-
+###
 
 jQuery.fn.equalheight = ->
   jQuery(this).each ->

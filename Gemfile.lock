@@ -129,6 +129,9 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.1)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.7.7)
     launchy (2.2.0)
       addressable (~> 2.3)
@@ -147,7 +150,7 @@ GEM
     mime-types (1.21)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
-    multi_json (1.5.1)
+    multi_json (1.6.0)
     multi_xml (0.5.3)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
@@ -276,6 +279,7 @@ DEPENDENCIES
   googlecharts
   govkit!
   jquery-rails
+  jquery-ui-rails
   meta_search
   nokogiri
   pg

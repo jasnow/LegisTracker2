@@ -5,7 +5,6 @@
 <body>
 <pre>
 ###
-/*--------------------------------------------------------------------
 * The following source code is a modified version of the original plugin "EqualHeights" for jQuery.
 *
 * JQuery Plugin: "EqualHeights"
@@ -20,7 +19,6 @@
 
 2/12/2013: Convert javascript to coffescript.
 
-------------------------------------------------------------------------*/
 ###
 
 jQuery.fn.equalheight = ->

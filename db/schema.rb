@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20110313055843) do
     t.integer "code_chapter"
     t.integer "bill_id"
     t.integer "xml_id"
-    t.boolean "crossover",           :default => false
+    t.boolean "crossover",           :default => true
   end
 
   create_table "house_committees", :force => true do |t|

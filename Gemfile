@@ -39,9 +39,12 @@ gem 'jquery-ui-rails'
 group :development, :test do
   # DATABASE-RELATED
   gem 'sqlite3'
+  gem 'yaml_db'
   #gem 'pg'
   gem 'taps'
   #TODO: gem 'mysql2'
+
+  gem 'thin'
 
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'

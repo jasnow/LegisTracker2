@@ -50,6 +50,16 @@ group :development, :test do
   gem 'faker'
   gem 'webrat'
 
+  gem "capybara", ">= 1.1.2"
+
+  #10/25/2012: Checked/Appears to not be used in production.
+  gem 'capybara-screenshot'
+
+  gem 'rails-footnotes', '>= 3.7.5.rc4'
+
+  # 10/25/2012: Restrict webkit to dev/test because Heroku has problem with it.
+  gem 'capybara-webkit'
+
   # Analysis Gems
   gem 'brakeman'
   gem 'cane'
@@ -61,6 +71,11 @@ group :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem "email_spec"
+
+  gem "autotest-rails"
+  gem "autotest-fsevent"
+  gem "autotest-growl"
+  gem "launchy", ">= 2.1.2"
 
   # Analysis Gems
   gem 'simplecov', :require => false
@@ -84,5 +99,3 @@ end
 #
 # To use debugger
 # gem 'debugger'
-
-

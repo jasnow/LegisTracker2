@@ -12,6 +12,5 @@
  *
  *= require_self
  *= require jquery.ui.all
- *= require blueprint/screen.css
  *= require_tree .
  */

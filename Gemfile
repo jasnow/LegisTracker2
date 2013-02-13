@@ -36,6 +36,8 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem 'thin'
+
 group :development, :test do
   # DATABASE-RELATED
   gem 'sqlite3'
@@ -43,8 +45,6 @@ group :development, :test do
   #gem 'pg'
   gem 'taps'
   #TODO: gem 'mysql2'
-
-  gem 'thin'
 
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'

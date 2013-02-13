@@ -9,6 +9,8 @@ gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'meta_search'
 
+gem 'blueprint-rails'
+
 # (now use heroku toolbelt) gem 'heroku'
 
 # 2/10/2013: Need git version to get rid of following error messages:

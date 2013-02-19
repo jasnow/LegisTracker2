@@ -6,7 +6,7 @@ class CreateMembers < ActiveRecord::Migration
       t.integer :district
       t.string :house, :limit => 1
       t.string :party, :limit => 1
-      t.string :seat, :limit => 4
+      t.text :seat, :limit => 4
       t.string :vote_id_string
     end
   end

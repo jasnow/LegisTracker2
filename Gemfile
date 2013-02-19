@@ -42,11 +42,12 @@ gem 'thin'
 
 group :development, :test do
   # DATABASE-RELATED
-  gem 'sqlite3'
+  #### gem 'sqlite3'
+  gem 'mysql2'
+
   gem 'yaml_db'
   #gem 'pg'
   gem 'taps'
-  #TODO: gem 'mysql2'
 
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'

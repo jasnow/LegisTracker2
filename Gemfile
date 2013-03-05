@@ -69,6 +69,7 @@ group :development, :test do
   # Analysis Gems
   gem 'brakeman'
   gem 'cane'
+  gem 'holepicker'
 end
 
 group :test do

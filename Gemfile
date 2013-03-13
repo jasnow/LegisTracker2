@@ -66,6 +66,9 @@ group :development, :test do
   # 10/25/2012: Restrict webkit to dev/test because Heroku has problem with it.
   gem 'capybara-webkit'
 
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
   # Analysis Gems
   gem 'brakeman'
   gem 'cane'

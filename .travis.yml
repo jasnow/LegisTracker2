@@ -3,9 +3,8 @@ language: ruby
 rvm:
 - 1.9.3
 
-notifications:
-  email:
-    recipients:
-    - jasnow@hotmail.com
-    on_success: change
-    on_failure: always
+before_script:
+  - cp config/database.sqlite3.yml config/database.yml
+  - rake db:create
+  - rake db:migrate
+  - rake db:test:prepare

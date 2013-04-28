@@ -2,6 +2,9 @@
 
 This is a Ruby-on-Rails web applicqation which allows users to track legislation through the Georgia State Assembly.
 
+{<img src="https://travis-ci.org/jasnow/LegisTracker2.png" />}[https://travis-ci.org/jasnow/LegisTracker2.png]
+{<img src="https://gemnasium.com/jasnow/LegisTracker2.png" />}[https://gemnasium.com/jasnow/LegisTracker2.png]
+
 == Requirements
 
 Ruby 1.9.3; Rails 3.2.11. To install gems: <tt>bundle install</tt>.

@@ -42,7 +42,7 @@ gem 'thin'
 
 group :development, :test do
   # DATABASE-RELATED
-  #### gem 'sqlite3'
+  gem 'sqlite3'
   gem 'mysql2'
 
   gem 'yaml_db'
@@ -62,9 +62,6 @@ group :development, :test do
   gem 'capybara-screenshot'
 
   gem 'rails-footnotes', '>= 3.7.5.rc4'
-
-  # 10/25/2012: Restrict webkit to dev/test because Heroku has problem with it.
-  gem 'capybara-webkit'
 
   gem 'better_errors'
   gem 'binding_of_caller'

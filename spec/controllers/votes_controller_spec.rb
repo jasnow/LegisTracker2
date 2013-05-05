@@ -13,9 +13,9 @@ describe VotesController do
       get :show, :id => @vote.id
     end
     it { should respond_with( :success ) }
-    it { should assign_to( :vote ).with( @vote ) }
-    it { should assign_to( :title ).with( "#{@vote.legislation}: #{@vote.description}" ) }
-    it { should assign_to( :bill ).with( @vote.bill ) }
+    it { assigns(:vote ).should eq(@vote) }
+    it { assigns(:title).should eq("#{@vote.legislation}: #{@vote.description}") }
+    it { assigns(:bill ).should eq(@vote.bill) }
   end
 
   describe VotesController, '#key' do
@@ -24,7 +24,7 @@ describe VotesController do
       get :key, :id => @vote.id
     end
     it { should respond_with( :redirect ) }
-    it { should assign_to( :vote ).with( @vote ) }
+    it { assigns( :vote ).should eq(@vote) }
     it { should set_the_flash.to( "Successfully tagged as key vote" ) }
   end
 
@@ -36,7 +36,7 @@ describe VotesController do
       get :unkey, :id => @vote.id
     end
     it { should respond_with( :redirect ) }
-    it { should assign_to( :vote ).with( @vote ) }
+    it { assigns(:vote).should eq(@vote) }
     it { should set_the_flash.to( "Successfully removed tag as key vote" ) }
   end
 end

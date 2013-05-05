@@ -4,7 +4,7 @@ This is a Ruby-on-Rails web applicqation which allows users to track legislation
 
 {<img src="https://travis-ci.org/jasnow/LegisTracker2.png" />}[https://travis-ci.org/jasnow/LegisTracker2.png]
 {<img src="https://gemnasium.com/jasnow/LegisTracker2.png" />}[https://gemnasium.com/jasnow/LegisTracker2.png]
-
+{<img src="http://api.coderwall.com/jasnow/endorsecount.png" />}[http://coderwall.com/jasnow]
 
 == Requirements
 
@@ -41,4 +41,11 @@ The House vote xml feed can be found at ::
     http://www1.legis.ga.gov/legis/2011_12/list/HouseVotes.xml
 The Senate vote xml feed can be found at ::
     http://www1.legis.ga.gov/legis/2011_12/list/SenateVotes.xml
+
+== Contributing
+
+ * Fork the project.
+ * Make your feature addition or bug fix.
+ * Add tests for it. This is important so I don't break it in a future version unintentionally.
+ * Send a pull request. Bonus points for topic branches.
 

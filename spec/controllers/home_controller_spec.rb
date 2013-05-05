@@ -20,7 +20,7 @@ describe HomeController do
     end
     it { should respond_with( :success ) }
     it { should render_template :index }
-    it { should assign_to( :title ).with( 'Home' ) }
+    it { assigns(:title).should eq('Home') }
 
     it "should route '/' to home/index" do
       { :get => "/" }.should route_to( :controller => "home", :action => "index" )
@@ -31,14 +31,13 @@ describe HomeController do
     end
 
     describe "Show watched bill events" do
-      it { should assign_to( :bills ).with( @user.watched_bills.order_by_status_date_desc ) }
-      it { should assign_to( :votes  ).with( @user.watched_bill_votes ) }
+      it { assigns(:bills).should eq(@user.watched_bills.order_by_status_date_desc) }
+      it { assigns(:votes).should eq( @user.watched_bill_votes ) }
     end
 
     describe "Show recent press releases" do
-      it { should assign_to( :house_rss  ).with( HouseFeed.find_recent  ) }
-      it { should assign_to( :senate_rss ).with( SenateFeed.find_recent ) }
+      it { assigns(:house_rss ).should eq(HouseFeed.find_recent ) }
+      it { assigns(:senate_rss).should eq(SenateFeed.find_recent) }
     end
   end
 end
-######################################################################

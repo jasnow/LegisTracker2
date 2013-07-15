@@ -26,7 +26,8 @@ class BillsController < ApplicationController
 
   def unhot
     @bill = Bill.find( params[:id] )
-    watched_bill = @bill.watched_bills.where( :user_id => current_user.id ).first
+    watched_bill = @bill.watched_bills.where(
+      :user_id => current_user.id ).first
     if watched_bill.delete
       flash[:notice] = "Bill successfully removed to watch list"
     else

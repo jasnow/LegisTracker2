@@ -7,12 +7,14 @@ describe BillVersion do
   it { should belong_to( :bill ) }
 
   it "should return versoin url" do
-    @version.url.should == "http://www1.legis.ga.gov/legis/2011_12/versions/#{@version.fileid}"
+    @version.url.should == "http://www1.legis.ga.gov/legis/" +
+      "2011_12/versions/#{@version.fileid}"
   end
 
   describe "ordered by number" do
     before( :each ) do
-      @newer_version = FactoryGirl.create( :bill_version, :number => @version.number + 1 )
+      @newer_version = FactoryGirl.create( :bill_version,
+        :number => @version.number + 1 )
     end
 
     it "should order by number decsending" do

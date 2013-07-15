@@ -38,7 +38,7 @@ module GovKit
             raise ClientError, '4xx client error'
         end
       end
-      
+
       instantiate(response)
     end
 

@@ -48,7 +48,7 @@ module GovKit
         parse(response)
       end
     end
-    
+
     class Committee < OpenStatesResource
       def self.find(committee_id)
         response = get("/committees/#{committee_id}/")
@@ -60,7 +60,7 @@ module GovKit
         parse(response)
       end
     end
-    
+
     class Role < OpenStatesResource; end
 
     class Sponsor < OpenStatesResource; end

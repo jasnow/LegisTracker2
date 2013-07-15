@@ -5,6 +5,6 @@ class Sponsorship < ActiveRecord::Base
   scope :primary, where( "seq = 1" )
   scope :secondary, where( "seq != 1" )
 
-  delegate :name, :display_name, :first_name, :last_name, :district_name, :party,
-           :to => :member
+  delegate :name, :display_name, :first_name, :last_name,
+    :district_name, :party, :to => :member
 end

@@ -23,7 +23,7 @@ module GovKit
   autoload :FollowTheMoney, 'gov_kit/follow_the_money'
   autoload :OpenCongress, 'gov_kit/open_congress'
   autoload :SearchEngines, 'gov_kit/search_engines'
-  
+
   class Mention
     attr_accessor :url, :excerpt, :title, :source, :date, :weight
   end
@@ -36,8 +36,8 @@ module GovKit
   class InvalidRequest < GovKitError; end
 
   class ResourceNotFound < GovKitError; end
-  
+
   class ServerError < GovKitError; end
-  
+
   class ClientError < GovKitError; end
 end

@@ -6,29 +6,29 @@ Connection: close
 Vary: Authorization
 
 {
-    "first_name": "Dave", 
-    "nimsp_candidate_id": 96237, 
-    "middle_name": "", 
-    "suffix": "", 
+    "first_name": "Dave",
+    "nimsp_candidate_id": 96237,
+    "middle_name": "",
+    "suffix": "",
     "roles": [
         {
-            "end_date": null, 
-            "district": "1", 
-            "contact_info": [], 
-            "chamber": "upper", 
-            "state": "ca", 
-            "session": "20092010", 
-            "committee": "", 
-            "party": "Republican", 
-            "votesmart_committee_id": null, 
-            "type": "member", 
+            "end_date": null,
+            "district": "1",
+            "contact_info": [],
+            "chamber": "upper",
+            "state": "ca",
+            "session": "20092010",
+            "committee": "",
+            "party": "Republican",
+            "votesmart_committee_id": null,
+            "type": "member",
             "start_date": null
         }
-    ], 
-    "updated_at": "2010-03-27 22:07:46", 
-    "sources": [], 
-    "leg_id": 2462, 
-    "last_name": "Cox", 
-    "votesmart_id": 16766, 
+    ],
+    "updated_at": "2010-03-27 22:07:46",
+    "sources": [],
+    "leg_id": 2462,
+    "last_name": "Cox",
+    "votesmart_id": 16766,
     "full_name": "Cox, Dave"
 }

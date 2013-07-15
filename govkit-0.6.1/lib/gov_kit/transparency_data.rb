@@ -20,7 +20,7 @@ module GovKit
         parse(response)
       end
     end
-    
+
     class Categories
       # Contribution category code mapping table, in CSV format
       # Returns an array of hashes, each with the following keys:

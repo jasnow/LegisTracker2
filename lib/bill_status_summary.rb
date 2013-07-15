@@ -7,7 +7,8 @@ require_relative 'bill_status_summary/bill_status'
 class BillStatusSummary
   attr_reader :xml_string, :response_code, :bills, :bill_count, :bill_nodes
 
-  def initialize( url = 'http://www1.legis.ga.gov/legis/2011_12/list/BillSummary.xml' )
+  def initialize( url =
+    'http://www1.legis.ga.gov/legis/2011_12/list/BillSummary.xml' )
     @url = url
     @xml_string = fetch( @url )
 #    @bills = parse( @xml_string )

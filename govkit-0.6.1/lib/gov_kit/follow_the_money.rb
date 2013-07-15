@@ -24,7 +24,7 @@ module GovKit
 
       doc
     end
-    
+
     def self.stringify_values_of(result)
       # result is an array of hashes, but all the values are Nokogiri::XML::Attr objects, not strings.
       # We want them to be strings.
@@ -35,7 +35,7 @@ module GovKit
   module FollowTheMoney
     class Candidate < FollowTheMoneyResource
       def self.list( query = {:year => '2010'} )
-        
+
         next_page, result, page_num = "yes", [], 0
 
         until next_page != "yes"

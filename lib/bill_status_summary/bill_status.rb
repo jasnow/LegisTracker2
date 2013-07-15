@@ -20,7 +20,8 @@ class BillStatus
   end
 
   def StatusDate
-    m, d, y = @node.attribute( 'StatusDate' ).to_s.split( /\// ).map { |num| num.to_i }
+    m, d, y = @node.attribute( 'StatusDate' ).to_s.split( /\//
+      ).map { |num| num.to_i }
     return "20%02d-%02d-%02d" % [ y, m, d ]
   end
 
@@ -28,7 +29,8 @@ class BillStatus
     if @node.xpath( 'EffDate/text()' ).inner_text.empty?
       return nil
     else
-      return Date.strptime( @node.xpath( 'EffDate' ).inner_text, '%m/%d/%y' ).to_s
+      return Date.strptime( @node.xpath( 'EffDate'
+        ).inner_text, '%m/%d/%y' ).to_s
     end
   end
 
@@ -152,7 +154,9 @@ class BillStatus
   end
 
   def bill_data_array
-    fields = %w[ Id Type Num Suffix Carryover YearID StatusDate Number Short_Title CompositeCaption Title HCommittee SCommittee EffDate BStatus Footnote ]
+    fields = %w[ Id Type Num Suffix Carryover YearID StatusDate
+      Number Short_Title CompositeCaption Title HCommittee
+      SCommittee EffDate BStatus Footnote ]
     data = Array.new
     fields.each do |field|
       data.push( self.send( field.to_sym ) )

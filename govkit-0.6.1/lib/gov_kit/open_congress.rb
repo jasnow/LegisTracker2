@@ -25,7 +25,7 @@ module GovKit::OpenCongress
 
     def self.hash2get(h)
       get_string = ""
-    
+
       h.each_pair do |key, value|
         get_string += "&#{key.to_s}=#{CGI::escape(value.to_s)}"
       end
@@ -72,9 +72,9 @@ module GovKit::OpenCongress
               :also_disapproved_representatives => also_disapproved_representatives,
               :also_approved_senators => also_approved_senators,
               :also_approved_representatives => also_approved_representatives}
-    
+
     end
-  
+
     def self.make_call(this_url)
       result = nil
       begin
@@ -82,9 +82,9 @@ module GovKit::OpenCongress
       rescue => e
         puts e
       end
-    
+
       return result
-    
+
     end
   end
 end

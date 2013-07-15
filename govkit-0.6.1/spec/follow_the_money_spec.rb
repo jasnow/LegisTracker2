@@ -26,7 +26,7 @@ module GovKit::FollowTheMoney
     end
 
     it "should raise NotAuthorizedError if the api key is not valid" do
-      lambda do 
+      lambda do
         @contribution = Contribution.find(0)
       end.should raise_error(GovKit::NotAuthorizedError)
 

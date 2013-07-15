@@ -8,8 +8,10 @@ class VotesSummary
 
   def initialize( house )
     @house = house
-    url = { :house  => 'http://www1.legis.ga.gov/legis/2011_12/list/HouseVotes.xml',
-            :senate => 'http://www1.legis.ga.gov/legis/2011_12/list/SenateVotes.xml' }
+    url = { :house  =>
+      'http://www1.legis.ga.gov/legis/2011_12/list/HouseVotes.xml',
+            :senate =>
+      'http://www1.legis.ga.gov/legis/2011_12/list/SenateVotes.xml' }
     xp = { :house => 'votes/vote', :senate => 'voting/vote' }
     @url = url[@house.to_sym]
     @xml_string = fetch( @url )

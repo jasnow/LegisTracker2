@@ -14,7 +14,8 @@ describe VotesController do
     end
     it { should respond_with( :success ) }
     it { assigns(:vote ).should eq(@vote) }
-    it { assigns(:title).should eq("#{@vote.legislation}: #{@vote.description}") }
+    it { assigns(:title).should eq(
+      "#{@vote.legislation}: #{@vote.description}") }
     it { assigns(:bill ).should eq(@vote.bill) }
   end
 

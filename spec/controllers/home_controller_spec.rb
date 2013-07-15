@@ -23,15 +23,18 @@ describe HomeController do
     it { assigns(:title).should eq('Home') }
 
     it "should route '/' to home/index" do
-      { :get => "/" }.should route_to( :controller => "home", :action => "index" )
+      { :get => "/" }.should route_to( :controller => "home",
+        :action => "index" )
     end
 
     it "should route root_path to home/index" do
-      { :get => root_path }.should route_to( :controller => "home", :action => "index" )
+      { :get => root_path }.should route_to( :controller => "home",
+        :action => "index" )
     end
 
     describe "Show watched bill events" do
-      it { assigns(:bills).should eq(@user.watched_bills.order_by_status_date_desc) }
+      it { assigns(:bills).should eq(
+        @user.watched_bills.order_by_status_date_desc) }
       it { assigns(:votes).should eq( @user.watched_bill_votes ) }
     end
 

@@ -29,7 +29,8 @@ describe Vote do
 
   describe "last_date method" do
     before( :each ) do
-      FactoryGirl.create( :vote, :bill => @bill, :date => '2011-01-05 12:00:00' )
+      FactoryGirl.create( :vote, :bill => @bill,
+        :date => '2011-01-05 12:00:00' )
     end
 
     it "should match find max date result" do
@@ -43,12 +44,15 @@ describe Vote do
 
   describe "most_recent method" do
     before( :each ) do
-      FactoryGirl.create( :vote, :bill => @bill, :date => '2011-01-05 12:00:00' )
+      FactoryGirl.create( :vote, :bill => @bill,
+        :date => '2011-01-05 12:00:00' )
     end
 
     it "should include all statuses on most recent date" do
-      FactoryGirl.create( :vote, :bill=> @bill, :date => '2011-01-10 15:00:00')
-      Vote.where( "DATE(date) = ?", Vote.last_date ).should == Vote.most_recent
+      FactoryGirl.create( :vote, :bill=> @bill,
+        :date => '2011-01-10 15:00:00')
+      Vote.where( "DATE(date) = ?", Vote.last_date
+        ).should == Vote.most_recent
     end
 
     it "should not include statuses from older dates" do
@@ -62,18 +66,23 @@ describe Vote do
 
   describe "find_for_date" do
     before( :each ) do
-      FactoryGirl.create( :vote, :bill => @bill, :date => '2011-01-05 12:00:00' )
-      FactoryGirl.create( :vote, :bill => @bill, :date => '2011-01-05 12:00:00' )
-      FactoryGirl.create( :vote, :bill => @bill, :date => '2011-01-06 12:00:00' )
+      FactoryGirl.create( :vote, :bill => @bill,
+        :date => '2011-01-05 12:00:00' )
+      FactoryGirl.create( :vote, :bill => @bill,
+        :date => '2011-01-05 12:00:00' )
+      FactoryGirl.create( :vote, :bill => @bill,
+        :date => '2011-01-06 12:00:00' )
     end
 
     it "should find all votes on a given date" do
-      Vote.where( "DATE(date) = ?", '2011-01-05' ).should == Vote.find_for_date( '2011-01-05')
+      Vote.where( "DATE(date) = ?", '2011-01-05'
+        ).should == Vote.find_for_date( '2011-01-05')
     end
 
     it "should not find dates on on the given date" do
       Vote.find_for_date( '2011-01-10' ).each do |on_date|
-        Vote.where( "DATE(date) != ?", '2011-01-10' ).each do |not_on_date|
+        Vote.where( "DATE(date) != ?", '2011-01-10'
+          ).each do |not_on_date|
           on_date.should_not == not_on_date
         end
       end
@@ -117,7 +126,8 @@ describe Vote do
       @hot_vote = FactoryGirl.create( :vote, :bill => @hot_bill )
 
       @cold_bill = FactoryGirl.create( :bill, :num => 2, :number => 'HB2' )
-      @cold_vote = FactoryGirl.create( :vote, :bill => @cold_bill, :legislation => 'HB 2' )
+      @cold_vote = FactoryGirl.create( :vote, :bill => @cold_bill,
+        :legislation => 'HB 2' )
     end
 
     it "should be true that hot bill vote is hot" do

@@ -21,19 +21,19 @@
 jQuery.fn.equalheight = ->
   jQuery(this).each ->
     currentTallest = 0 #create currentTallest var
-    
+
     #go through every child of the mother div
     jQuery(this).children().each (i) ->
-      
+
       #keep checking every childs height and get the height of the tallest div
       currentTallest = jQuery(this).height()  if jQuery(this).height() > currentTallest
 
     #set currentTallest as pixels
     currentTallest = currentTallest + "px"
-    
+
     #If browser is Microsoft Internet explorer, then "use" css "height: yypx"
     jQuery(this).children().css height: currentTallest  if jQuery.browser.msie and jQuery.browser.version is 6.0
-    
+
     #use css "min-height or height: yypx"
     jQuery(this).children().css "min-height": currentTallest
 this

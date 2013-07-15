@@ -14,7 +14,8 @@ describe Member do
     end
 
     it "should return first_name last_name as display_name" do
-      @member.display_name.should == "#{@member.first_name} #{@member.last_name}"
+      @member.display_name.should == "#{@member.first_name} " +
+        "#{@member.last_name}"
     end
 
     it "should return house and district as district_name" do

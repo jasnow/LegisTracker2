@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   end
 
   def watched_bill_statuses
-    Status.joins( "JOIN watched_bills ON statuses.bill_id = watched_bills.bill_id" ).
+    Status.joins(
+      "JOIN watched_bills ON statuses.bill_id = watched_bills.bill_id" ).
            where( "watched_bills.user_id = ?", id ).
            order( "statuses.status_date DESC" )
   end

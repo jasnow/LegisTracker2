@@ -17,26 +17,33 @@ class Bill < ActiveRecord::Base
   has_many :member_votes
   has_many :sponsorships
   has_many :members, :through => :sponsorships
-  search_methods :sponsor_name, :sponsor_district, :sponsor_party, :default_order,
-                 :status_history, :tagged_with, :topic_includes, :my_watched_bills
+  search_methods :sponsor_name, :sponsor_district, :sponsor_party,
+    :default_order, :status_history, :tagged_with, :topic_includes,
+    :my_watched_bills
 
   scope :sponsor_name, lambda { |name|
-    joins("join sponsorships on sponsorships.bill_id = bills.id join members on members.id = sponsorships.member_id").
-    where( "sponsorships.seq = 1 and concat_ws( ' ', members.last_name, members.first_name ) like ?", "%#{name}%" )
+    joins("join sponsorships on sponsorships.bill_id = bills.id " +
+      "join members on members.id = sponsorships.member_id").
+    where( "sponsorships.seq = 1 and concat_ws( ' ', members.last_name, " +
+      "members.first_name ) like ?", "%#{name}%" )
   }
 
   scope :sponsor_district, lambda { |dist|
-    joins("join sponsorships on sponsorships.bill_id = bills.id join members on members.id = sponsorships.member_id").
-    where( "sponsorships.seq = 1 and concat( members.house, members.district ) = ?", dist )
+    joins("join sponsorships on sponsorships.bill_id = bills.id " +
+      "join members on members.id = sponsorships.member_id").
+    where( "sponsorships.seq = 1 and concat( members.house, " +
+      "members.district ) = ?", dist )
   }
 
   scope :sponsor_party, lambda { |party|
-    joins("join sponsorships on sponsorships.bill_id = bills.id join members on members.id = sponsorships.member_id").
+    joins("join sponsorships on sponsorships.bill_id = bills.id " +
+      "join members on members.id = sponsorships.member_id").
     where( "sponsorships.seq = 1 and members.party = ?", party )
   }
 
   scope :status_history, lambda { |text|
-    joins( "JOIN statuses ON statuses.bill_id = bills.id JOIN status_codes ON statuses.status_code_id = status_codes.id" ).
+    joins( "JOIN statuses ON statuses.bill_id = bills.id JOIN " +
+      "status_codes ON statuses.status_code_id = status_codes.id" ).
     where( "status_codes.description like ?", "%#{text}%" )
   }
 
@@ -114,7 +121,8 @@ class Bill < ActiveRecord::Base
         self.connection.execute( 'DELETE from statuses' )
         self.connection.execute( 'ALTER TABLE statuses AUTO_INCREMENT = 1' )
         self.connection.execute( 'DELETE from bill_versions' )
-        self.connection.execute( 'ALTER TABLE bill_versions AUTO_INCREMENT = 1' )
+        self.connection.execute(
+          'ALTER TABLE bill_versions AUTO_INCREMENT = 1' )
 
         bills_summary.bills.each do |bill|
           create!(
@@ -137,7 +145,8 @@ class Bill < ActiveRecord::Base
             :code_title        => bill.Citation['codeTitle'].to_i,
             :code_chapter      => bill.Citation['codeChapter'].to_i
           )
-          connection.execute( "UPDATE bills SET id = xml_id WHERE xml_id = #{bill.Id}" )
+          connection.execute(
+            "UPDATE bills SET id = xml_id WHERE xml_id = #{bill.Id}" )
 
           bill.StatusHistory.each do |status|
             parent = find( bill.Id.to_i )

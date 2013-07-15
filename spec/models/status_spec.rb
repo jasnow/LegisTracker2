@@ -29,7 +29,8 @@ describe Status do
 
   describe "last_date method" do
     before( :each ) do
-      FactoryGirl.create( :status, :bill => @bill, :status_date => '2011-01-05 12:00:00' )
+      FactoryGirl.create( :status, :bill => @bill,
+        :status_date => '2011-01-05 12:00:00' )
     end
 
     it "should match find max date result" do
@@ -43,18 +44,23 @@ describe Status do
 
   describe "most_recent method" do
     before( :each ) do
-      FactoryGirl.create( :status, :bill => @bill, :status_date => '2011-01-10 12:00:00' )
-      FactoryGirl.create( :status, :bill => @bill, :status_date => '2011-01-05 12:00:00' )
+      FactoryGirl.create( :status, :bill => @bill,
+        :status_date => '2011-01-10 12:00:00' )
+      FactoryGirl.create( :status, :bill => @bill,
+        :status_date => '2011-01-05 12:00:00' )
     end
 
     it "should include all statuses on most recent date" do
-      FactoryGirl.create( :status, :bill=> @bill, :status_date => '2011-01-10 15:00:00')
-      Status.where( "DATE(status_date) = ?", Status.last_date ).should == Status.most_recent
+      FactoryGirl.create( :status, :bill=> @bill,
+        :status_date => '2011-01-10 15:00:00')
+      Status.where( "DATE(status_date) = ?",
+        Status.last_date ).should == Status.most_recent
     end
 
     it "should not include statuses from older dates" do
       Status.most_recent.each do |recent|
-        Status.where( "DATE(status_date) != ?", Status.last_date ).each do |old|
+        Status.where( "DATE(status_date) != ?", Status.last_date
+          ).each do |old|
           recent.should_not == old
         end
       end
@@ -63,19 +69,25 @@ describe Status do
 
   describe "find_for_date method" do
     before( :each ) do
-      FactoryGirl.create( :status, :bill => @bill, :status_date => '2011-01-05 12:00:00' )
-      FactoryGirl.create( :status, :bill => @bill, :status_date => '2011-01-06 12:00:00' )
-      FactoryGirl.create( :status, :bill => @bill, :status_date => '2011-01-07 13:00:00' )
+      FactoryGirl.create( :status, :bill => @bill,
+        :status_date => '2011-01-05 12:00:00' )
+      FactoryGirl.create( :status, :bill => @bill,
+        :status_date => '2011-01-06 12:00:00' )
+      FactoryGirl.create( :status, :bill => @bill,
+        :status_date => '2011-01-07 13:00:00' )
     end
 
     it "should find find all statuses for a given date" do
-      FactoryGirl.create( :status, :bill => @bill, :status_date => '2011-01-05 13:00:00' )
-      Status.where( "DATE(status_date) = ?", '2011-01-05' ).should == Status.find_for_date( '2011-01-05' )
+      FactoryGirl.create( :status, :bill => @bill,
+        :status_date => '2011-01-05 13:00:00' )
+      Status.where( "DATE(status_date) = ?", '2011-01-05'
+        ).should == Status.find_for_date( '2011-01-05' )
     end
 
     it "should not find find any statuses not on a given date" do
       Status.find_for_date( '2011-01-10' ).each do |on_date|
-        Status.where( "DATE(status_date) != ?", '2011-01-10' ).each do |not_on_date|
+        Status.where( "DATE(status_date) != ?", '2011-01-10'
+          ).each do |not_on_date|
           on_date.should_not == not_on_date
         end
       end

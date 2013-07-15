@@ -75,13 +75,16 @@ class Member < ActiveRecord::Base
   end
 
   def contributions_by_source
-    [percent_individuals, percent_institutions, percent_party_committee, percent_leadership_committee,
-     percent_self_finance, percent_noncontribution_income, percent_unitemized]
+    [percent_individuals, percent_institutions,
+      percent_party_committee,
+      percent_leadership_committee, percent_self_finance,
+      percent_noncontribution_income, percent_unitemized]
   end
 
   def top_contributors
     begin
-      imsp_member_id ? GovKit::FollowTheMoney::Contribution.top( imsp_member_id ) : nil
+      imsp_member_id ? GovKit::FollowTheMoney::Contribution.top(
+        imsp_member_id ) : nil
     rescue
       nil
     end
@@ -89,7 +92,8 @@ class Member < ActiveRecord::Base
 
   def contributions_by_sector
     begin
-      imsp_member_id ? GovKit::FollowTheMoney::SectorContribution.find( imsp_member_id ) : nil
+      imsp_member_id ? GovKit::FollowTheMoney::SectorContribution.find(
+        imsp_member_id ) : nil
     rescue
       nil
     end
@@ -97,7 +101,8 @@ class Member < ActiveRecord::Base
 
   def contributions_by_industry
     begin
-      imsp_member_id ? GovKit::FollowTheMoney::IndustryContribution.find( imsp_member_id ) : nil
+      imsp_member_id ? GovKit::FollowTheMoney::IndustryContribution.find(
+        imsp_member_id ) : nil
     rescue
       nil
     end
@@ -105,7 +110,8 @@ class Member < ActiveRecord::Base
 
   def contributions_by_business
     begin
-      imsp_member_id ? GovKit::FollowTheMoney::BusinessContribution.find( imsp_member_id ) : nil
+      imsp_member_id ? GovKit::FollowTheMoney::BusinessContribution.find(
+        imsp_member_id ) : nil
     rescue
       nil
     end
@@ -130,7 +136,8 @@ class Member < ActiveRecord::Base
   def self.load_imsp_data
     [ 'HOUSE', 'SENATE' ].each do |house|
       puts "Getting #{house} candidates"
-      candidates = GovKit::FollowTheMoney::Candidate.list( :state => 'GA', :year => '2010', :office => house, :status => 'WON' )
+      candidates = GovKit::FollowTheMoney::Candidate.list( :state => 'GA',
+        :year => '2010', :office => house, :status => 'WON' )
       candidates.each do |c|
         member = Member.find_by_imsp_member_id( c.imsp_candidate_id )
         next if member.nil?
@@ -138,7 +145,8 @@ class Member < ActiveRecord::Base
         member.total_out_of_state_dollars   = c.total_out_of_state_dollars
         member.total_unknown_state_dollars  = c.total_unknown_state_dollars
         member.party_committee_dollars      = c.party_committee_dollars
-        member.leadership_committee_dollars = c.candidate_leadership_committee_dollars
+        member.leadership_committee_dollars =
+          c.candidate_leadership_committee_dollars
         member.candidate_money_dollars      = c.candidate_money_dollars
         member.individual_dollars           = c.individual_dollars
         member.unitemized_donation_dollars  = c.unitemized_donation_dollars

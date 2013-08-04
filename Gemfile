@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'meta_search'
@@ -13,9 +10,7 @@ gem 'blueprint-rails'
 
 # (now use heroku toolbelt) gem 'heroku'
 
-# 2/10/2013: Need git version to get rid of following error messages:
-#            output error : unknown encoding ASCII-8BIT
-gem 'feedzirra', :git => 'git://github.com/pauldix/feedzirra.git'
+gem 'feedzirra'
 
 gem 'googlecharts'
 
@@ -52,7 +47,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'factory_girl_rails'
-  #gem 'factory_girl_rails' , :git => "http://github.com/CodeMonkeySteve/factory_girl_rails.git"
   gem 'faker'
   gem 'webrat'
   gem "capybara"

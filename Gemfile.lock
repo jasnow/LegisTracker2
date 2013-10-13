@@ -100,7 +100,7 @@ GEM
       nokogiri (>= 1.4.6)
     curb (0.7.18)
     daemons (1.1.9)
-    database_cleaner (1.0.1)
+    database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     devise (3.1.1)
       bcrypt-ruby (~> 3.0)
@@ -308,7 +308,7 @@ DEPENDENCIES
   capybara-screenshot
   coffee-rails
   cucumber-rails
-  database_cleaner (= 1.0.1)
+  database_cleaner
   devise
   email_spec
   factory_girl_rails

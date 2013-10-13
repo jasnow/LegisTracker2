@@ -69,7 +69,8 @@ group :test do
   gem 'cucumber-rails', :require => false
 
   # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner', '1.0.1'
+  gem 'database_cleaner'
+#, '1.0.1'
   gem "email_spec"
 
   gem "autotest-rails"

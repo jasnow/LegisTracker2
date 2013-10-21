@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.i
 require 'digest/md5'
 require 'active_support'
 require 'nokogiri'
-require 'iconv'
+#require 'iconv'
 require 'httparty'
 require 'open-uri'
 require 'json'

@@ -72,6 +72,8 @@ module LegisTracker2
 
     #HID: config.assets.initialize_on_precompile = false
 
+    I18n.config.enforce_available_locales = false
+
     # 2/7/2013: Apped for RailsApp.
     config.generators do |g|
       g.test_framework :rspec, fixture: true

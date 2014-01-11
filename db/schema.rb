@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110313055843) do
+ActiveRecord::Schema.define(:version => 20140111143244) do
 
   create_table "bill_versions", :force => true do |t|
     t.integer "number"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20110313055843) do
     t.integer "district"
     t.string  "house",                        :limit => 1
     t.string  "party",                        :limit => 1
-    t.text    "seat",                         :limit => 255
+    t.text    "seat",                         :limit => 4
     t.string  "vote_id_string"
     t.integer "imsp_member_id"
     t.integer "total_instate_dollars"
@@ -140,12 +140,13 @@ ActiveRecord::Schema.define(:version => 20110313055843) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], :name => "taggings_idx", :unique => true
 
   create_table "tags", :force => true do |t|
     t.string "name"
   end
+
+  add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

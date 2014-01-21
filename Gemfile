@@ -35,6 +35,10 @@ gem 'jquery-ui-rails'
 
 gem 'thin'
 
+group :development do
+  gem 'codesake-dawn', :require => false
+end
+
 group :development, :test do
   # DATABASE-RELATED
   gem 'sqlite3'

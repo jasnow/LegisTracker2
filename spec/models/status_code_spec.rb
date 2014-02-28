@@ -5,6 +5,6 @@ describe StatusCode do
 
   it "should provide description of status" do
     @status = FactoryGirl.create( :status )
-    @status.status_code.description.should == 'House Prefiled'
+    expect(@status.status_code.description).to eq('House Prefiled')
   end
 end

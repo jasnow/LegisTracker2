@@ -20,27 +20,27 @@ describe HomeController do
     end
     it { should respond_with( :success ) }
     it { should render_template :index }
-    it { assigns(:title).should eq('Home') }
+    it { expect(assigns(:title)).to eq('Home') }
 
     it "should route '/' to home/index" do
-      { :get => "/" }.should route_to( :controller => "home",
+      expect({ :get => "/" }).to route_to( :controller => "home",
         :action => "index" )
     end
 
     it "should route root_path to home/index" do
-      { :get => root_path }.should route_to( :controller => "home",
+      expect({ :get => root_path }).to route_to( :controller => "home",
         :action => "index" )
     end
 
     describe "Show watched bill events" do
-      it { assigns(:bills).should eq(
+      it { expect(assigns(:bills)).to eq(
         @user.watched_bills.order_by_status_date_desc) }
-      it { assigns(:votes).should eq( @user.watched_bill_votes ) }
+      it { expect(assigns(:votes)).to eq( @user.watched_bill_votes ) }
     end
 
     describe "Show recent press releases" do
-      it { assigns(:house_rss ).should eq(HouseFeed.find_recent ) }
-      it { assigns(:senate_rss).should eq(SenateFeed.find_recent) }
+      it { expect(assigns(:house_rss )).to eq(HouseFeed.find_recent ) }
+      it { expect(assigns(:senate_rss)).to eq(SenateFeed.find_recent) }
     end
   end
 end

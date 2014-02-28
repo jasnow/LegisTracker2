@@ -12,10 +12,10 @@ describe BillsController do
     end
     it { should respond_with( :success ) }
     it { should render_template( :index ) }
-    it { assigns( :title ).should eq("Search results") }
-    it { assigns( :bills ).should be_true  }
+    it { expect(assigns( :title )).to eq("Search results") }
+    it { expect(assigns( :bills )).to be_truthy  }
     it "should route '/bills' to bills/index" do
-      { :get => bills_path }.should route_to( :controller => "bills",
+      expect({ :get => bills_path }).to route_to( :controller => "bills",
         :action => "index" )
     end
   end
@@ -27,10 +27,10 @@ describe BillsController do
     end
     it { should respond_with( :success ) }
     it { should render_template( :show ) }
-    it { assigns(:bill ).should eq(@bill) }
-    it { assigns(:title).should eq(@bill.number) }
+    it { expect(assigns(:bill )).to eq(@bill) }
+    it { expect(assigns(:title)).to eq(@bill.number) }
     it "should route bill_path to bills/should" do
-      { :get => bill_path }.should route_to( :controller => "bills",
+      expect({ :get => bill_path }).to route_to( :controller => "bills",
         :action => "show", :id => @bill.to_param )
     end
   end
@@ -41,9 +41,9 @@ describe BillsController do
     end
     it { should respond_with( :success ) }
     it { should render_template( :search ) }
-    it { assigns(:title).should eq("Advanced Search") }
+    it { expect(assigns(:title)).to eq("Advanced Search") }
     it "should route search_path to bills/search" do
-      { :get => search_path }.should route_to( :controller => "bills",
+      expect({ :get => search_path }).to route_to( :controller => "bills",
         :action => "search" )
     end
   end
@@ -94,9 +94,9 @@ describe BillsController do
     end
     it { should respond_with( :redirect ) }
     it { should set_the_flash.to(/Bill successfully tagged with topic/) }
-    it { assigns(:bill).should eq(@bill) }
+    it { expect(assigns(:bill)).to eq(@bill) }
     it "should include 'taxes' tag in topics_list" do
-      @bill.topic_list.should include( 'taxes' )
+      expect(@bill.topic_list).to include( 'taxes' )
     end
   end
 end

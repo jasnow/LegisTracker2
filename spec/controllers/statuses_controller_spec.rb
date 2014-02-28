@@ -15,12 +15,12 @@ describe StatusesController do
   describe StatusesController, "#index" do
     it { should respond_with( :success ) }
     it { should render_template( :index ) }
-    it { assigns(:title      ).should eq('Daily bill status report') }
-    it { assigns(:status_date).should eq(Status.last_date) }
-    it { assigns(:events     ).should eq(Status.find_for_date(
+    it { expect(assigns(:title      )).to eq('Daily bill status report') }
+    it { expect(assigns(:status_date)).to eq(Status.last_date) }
+    it { expect(assigns(:events     )).to eq(Status.find_for_date(
       Status.last_date)) }
-    it { assigns(:vote_date  ).should eq(Vote.last_date.to_s) }
-    it { assigns(:votes      ).should eq(Vote.find_for_date(
+    it { expect(assigns(:vote_date  )).to eq(Vote.last_date.to_s) }
+    it { expect(assigns(:votes      )).to eq(Vote.find_for_date(
       Vote.last_date.to_s)) }
   end
 end

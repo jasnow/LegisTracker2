@@ -11,9 +11,9 @@ describe MembersController do
       get :index
     end
     it { should respond_with( :success ) }
-    it { assigns( :title ).should eq( "Members") }
+    it { expect(assigns( :title )).to eq( "Members") }
     it "should route members_path to members/index" do
-      { :get => members_path }.should route_to( :controller => "members",
+      expect({ :get => members_path }).to route_to( :controller => "members",
         :action => "index" )
     end
   end
@@ -24,10 +24,10 @@ describe MembersController do
       get :show, :id => @member.id
     end
     it { should respond_with( :success ) }
-    it { assigns(:title ).should eq(@member.name) }
-    it { assigns(:member).should eq(@member) }
+    it { expect(assigns(:title )).to eq(@member.name) }
+    it { expect(assigns(:member)).to eq(@member) }
     it "should route member_path to members/show" do
-      { :get => member_path }.should route_to( :controller => "members",
+      expect({ :get => member_path }).to route_to( :controller => "members",
         :action => "show", :id => @member.to_param )
     end
   end

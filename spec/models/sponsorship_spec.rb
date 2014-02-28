@@ -11,7 +11,7 @@ describe Sponsorship do
     end
 
     it "should find primary sponsorships" do
-      Sponsorship.primary.should == Sponsorship.where( "seq = 1" )
+      expect(Sponsorship.primary).to eq(Sponsorship.where( "seq = 1" ))
     end
   end
 
@@ -22,7 +22,7 @@ describe Sponsorship do
     end
 
     it "should find primary sponsorships" do
-      Sponsorship.secondary.should == Sponsorship.where( "seq != 1" )
+      expect(Sponsorship.secondary).to eq(Sponsorship.where( "seq != 1" ))
     end
   end
 
@@ -33,23 +33,23 @@ describe Sponsorship do
     end
 
     it "should provide name" do
-      @sponsorship.name.should == @member.name
+      expect(@sponsorship.name).to eq(@member.name)
     end
 
     it "should provide display_name" do
-      @sponsorship.display_name.should == @member.display_name
+      expect(@sponsorship.display_name).to eq(@member.display_name)
     end
 
     it "should provide first_name" do
-      @sponsorship.first_name.should == @member.first_name
+      expect(@sponsorship.first_name).to eq(@member.first_name)
     end
 
     it "should provide last_name" do
-      @sponsorship.last_name.should == @member.last_name
+      expect(@sponsorship.last_name).to eq(@member.last_name)
     end
 
     it "should provide district_name" do
-      @sponsorship.district_name.should == @member.district_name
+      expect(@sponsorship.district_name).to eq(@member.district_name)
     end
   end
 end

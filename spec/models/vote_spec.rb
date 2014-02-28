@@ -11,20 +11,20 @@ describe Vote do
   it "should create new vote record" do
     previous_record_count = Vote.count
     vote = @bill.votes.new( FactoryGirl.attributes_for( :vote ) )
-    vote.save.should be true
-    Vote.count.should == previous_record_count + 1
+    expect(vote.save).to be true
+    expect(Vote.count).to eq(previous_record_count + 1)
   end
 
   it "should have correct bill id" do
     vote = @bill.votes.new( FactoryGirl.attributes_for( :vote ) )
-    vote.save.should be true
-    vote.bill_id.should == @bill.id
+    expect(vote.save).to be true
+    expect(vote.bill_id).to eq(@bill.id)
   end
 
   it "should provide most recent" do
     last_date = Vote.last_date
     vote = Vote.most_recent.first
-    vote.date.to_s.should match( /2011-01-10/ )
+    expect(vote.date.to_s).to match( /2011-01-10/ )
   end
 
   describe "last_date method" do
@@ -34,11 +34,11 @@ describe Vote do
     end
 
     it "should match find max date result" do
-      Vote.maximum( "DATE(date)" ).should == Vote.last_date
+      expect(Vote.maximum( "DATE(date)" )).to eq(Vote.last_date)
     end
 
     it "should not match older dates" do
-      Vote.last_date.should_not be < ( '2011-01-10' )
+      expect(Vote.last_date).not_to be < ( '2011-01-10' )
     end
   end
 
@@ -51,14 +51,14 @@ describe Vote do
     it "should include all statuses on most recent date" do
       FactoryGirl.create( :vote, :bill=> @bill,
         :date => '2011-01-10 15:00:00')
-      Vote.where( "DATE(date) = ?", Vote.last_date
-        ).should == Vote.most_recent
+      expect(Vote.where( "DATE(date) = ?", Vote.last_date
+        )).to eq(Vote.most_recent)
     end
 
     it "should not include statuses from older dates" do
       Vote.most_recent.each do |recent|
         Vote.where( "DATE(date) != ?", Vote.last_date ).each do |old|
-          recent.should_not == old
+          expect(recent).not_to eq(old)
         end
       end
     end
@@ -75,15 +75,15 @@ describe Vote do
     end
 
     it "should find all votes on a given date" do
-      Vote.where( "DATE(date) = ?", '2011-01-05'
-        ).should == Vote.find_for_date( '2011-01-05')
+      expect(Vote.where( "DATE(date) = ?", '2011-01-05'
+        )).to eq(Vote.find_for_date( '2011-01-05'))
     end
 
     it "should not find dates on on the given date" do
       Vote.find_for_date( '2011-01-10' ).each do |on_date|
         Vote.where( "DATE(date) != ?", '2011-01-10'
           ).each do |not_on_date|
-          on_date.should_not == not_on_date
+          expect(on_date).not_to eq(not_on_date)
         end
       end
     end
@@ -97,7 +97,7 @@ describe Vote do
 
     it "should take tag 'key'" do\
       @vote.key_list.add( 'key' )
-      @vote.save.should == true
+      expect(@vote.save).to eq(true)
     end
 
     it "should find votes tagged as key" do
@@ -105,16 +105,16 @@ describe Vote do
       key_vote.key_list.add( 'key' )
       key_vote.save
 
-      Vote.key.all.should == Vote.tagged_with( 'key' )
-      Vote.key.count.should == 1
-      Vote.key.first.should == key_vote
+      expect(Vote.key.all).to eq(Vote.tagged_with( 'key' ))
+      expect(Vote.key.count).to eq(1)
+      expect(Vote.key.first).to eq(key_vote)
     end
 
     it "should return true if is key vote" do
       @vote.key_list.add( 'key' )
       @vote.save
 
-      @vote.is_key?.should == true
+      expect(@vote.is_key?).to eq(true)
     end
   end
 
@@ -131,18 +131,18 @@ describe Vote do
     end
 
     it "should be true that hot bill vote is hot" do
-      @hot_vote.is_hot_bill?.should be_true
+      expect(@hot_vote.is_hot_bill?).to be_truthy
     end
 
     it "should be false that cold bill vote is hot" do
-      @cold_vote.is_hot_bill?.should be_false
+      expect(@cold_vote.is_hot_bill?).to be_falsey
     end
 
     it "should find hot bills" do
       hot_votes = Vote.hot_bills
 
       hot_votes.each do |vote|
-        vote.is_hot_bill?.should be_true
+        expect(vote.is_hot_bill?).to be_truthy
       end
     end
   end

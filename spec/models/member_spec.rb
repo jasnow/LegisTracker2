@@ -10,16 +10,16 @@ describe Member do
     end
 
     it "should return last_name, first_name as name" do
-      @member.name.should == "#{@member.last_name}, #{@member.first_name}"
+      expect(@member.name).to eq("#{@member.last_name}, #{@member.first_name}")
     end
 
     it "should return first_name last_name as display_name" do
-      @member.display_name.should == "#{@member.first_name} " +
-        "#{@member.last_name}"
+      expect(@member.display_name).to eq("#{@member.first_name} " +
+        "#{@member.last_name}")
     end
 
     it "should return house and district as district_name" do
-      @member.district_name.should == "#{@member.house}#{@member.district}"
+      expect(@member.district_name).to eq("#{@member.house}#{@member.district}")
     end
   end
 
@@ -30,16 +30,16 @@ describe Member do
     end
 
     it "should return only democratic members" do
-      Member.democrats.all.should == Member.where( "party = ?", 'D' )
+      expect(Member.democrats.all).to eq(Member.where( "party = ?", 'D' ))
     end
 
     it "should return only republican members" do
-      Member.republicans.all.should == Member.where( "party = ?", 'R' )
+      expect(Member.republicans.all).to eq(Member.where( "party = ?", 'R' ))
     end
 
     it "should find members of a party" do
-      Member.find_by_party('D').all.should == Member.where( "party = ?", 'D' )
-      Member.find_by_party('R').all.should == Member.where( "party = ?", 'R' )
+      expect(Member.find_by_party('D').all).to eq(Member.where( "party = ?", 'D' ))
+      expect(Member.find_by_party('R').all).to eq(Member.where( "party = ?", 'R' ))
     end
   end
 
@@ -50,16 +50,16 @@ describe Member do
     end
 
     it "should find only house members" do
-      Member.reps.all.should == Member.where( "house = ?", 'H' )
+      expect(Member.reps.all).to eq(Member.where( "house = ?", 'H' ))
     end
 
     it "should find only senate members" do
-      Member.senators.all.should == Member.where( "house = ?", 'S' )
+      expect(Member.senators.all).to eq(Member.where( "house = ?", 'S' ))
     end
 
     it "should find members of a house" do
-      Member.find_by_house( 'H' ).all.should == Member.where( "house = ?", 'H' )
-      Member.find_by_house( 'S' ).all.should == Member.where( "house = ?", 'S' )
+      expect(Member.find_by_house( 'H' ).all).to eq(Member.where( "house = ?", 'H' ))
+      expect(Member.find_by_house( 'S' ).all).to eq(Member.where( "house = ?", 'S' ))
     end
   end
 end

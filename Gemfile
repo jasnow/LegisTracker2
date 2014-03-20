@@ -10,7 +10,7 @@ gem 'blueprint-rails'
 
 # (now use heroku toolbelt) gem 'heroku'
 
-gem 'feedzirra'
+gem 'feedjira'
 
 gem 'googlecharts'
 

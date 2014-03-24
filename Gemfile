@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.17'
+gem 'rack-ssl', '1.3.4'
 
 gem 'devise'
 gem 'acts-as-taggable-on'

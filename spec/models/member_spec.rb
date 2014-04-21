@@ -38,8 +38,10 @@ describe Member do
     end
 
     it "should find members of a party" do
-      expect(Member.find_by_party('D').all).to eq(Member.where( "party = ?", 'D' ))
-      expect(Member.find_by_party('R').all).to eq(Member.where( "party = ?", 'R' ))
+      expect(Member.find_by_party('D').all).to eq(
+        Member.where( "party = ?", 'D' ))
+      expect(Member.find_by_party('R').all).to eq(
+        Member.where( "party = ?", 'R' ))
     end
   end
 
@@ -58,8 +60,10 @@ describe Member do
     end
 
     it "should find members of a house" do
-      expect(Member.find_by_house( 'H' ).all).to eq(Member.where( "house = ?", 'H' ))
-      expect(Member.find_by_house( 'S' ).all).to eq(Member.where( "house = ?", 'S' ))
+      expect(Member.find_by_house( 'H' ).all).to eq(
+        Member.where( "house = ?", 'H' ))
+      expect(Member.find_by_house( 'S' ).all).to eq(
+        Member.where( "house = ?", 'S' ))
     end
   end
 end

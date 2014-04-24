@@ -15,7 +15,7 @@ GEM
       sexp_processor (>= 3.0.0)
     RubyInline (3.12.2)
       ZenTest (~> 4.3)
-    ZenTest (4.9.5)
+    ZenTest (4.10.0)
     actionmailer (3.2.17)
       actionpack (= 3.2.17)
       mail (~> 2.5.4)
@@ -89,7 +89,7 @@ GEM
       mechanize
       nokogiri
       rainbow (~> 2.0.0)
-    codesake-dawn (1.1.1)
+    codesake-dawn (1.1.2)
       codesake-commons (~> 0.95.0)
       coveralls
       cvss
@@ -283,7 +283,7 @@ GEM
     rspec-support (3.0.0.beta1)
     ruby2ruby (1.2.2)
       ParseTree (~> 3.0)
-    ruby_parser (3.5.0)
+    ruby_parser (3.6.0)
       sexp_processor (~> 4.1)
     ruport (1.6.3)
       fastercsv

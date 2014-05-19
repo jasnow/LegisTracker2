@@ -49,7 +49,7 @@ group :development, :test do
   #gem 'pg'
   gem 'taps'
 
-  gem 'rspec-rails', '3.0.0.beta1'
+  gem 'rspec-rails'
   gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'faker'

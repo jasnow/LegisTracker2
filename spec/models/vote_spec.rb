@@ -131,18 +131,18 @@ describe Vote do
     end
 
     it "should be true that hot bill vote is hot" do
-      expect(@hot_vote.is_hot_bill?).to be_truthy
+      @hot_vote.is_hot_bill?.should be_true
     end
 
     it "should be false that cold bill vote is hot" do
-      expect(@cold_vote.is_hot_bill?).to be_falsey
+      @cold_vote.is_hot_bill?.should be_false
     end
 
     it "should find hot bills" do
       hot_votes = Vote.hot_bills
 
       hot_votes.each do |vote|
-        expect(vote.is_hot_bill?).to be_truthy
+        vote.is_hot_bill?.should be_true
       end
     end
   end

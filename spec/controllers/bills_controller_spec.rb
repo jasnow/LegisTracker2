@@ -13,7 +13,7 @@ describe BillsController do
     it { should respond_with( :success ) }
     it { should render_template( :index ) }
     it { expect(assigns( :title )).to eq("Search results") }
-    it { expect(assigns( :bills )).to be_truthy  }
+    it { assigns( :bills ).should be_true  }
     it "should route '/bills' to bills/index" do
       expect({ :get => bills_path }).to route_to( :controller => "bills",
         :action => "index" )

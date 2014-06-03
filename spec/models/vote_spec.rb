@@ -131,18 +131,18 @@ describe Vote do
     end
 
     it "should be true that hot bill vote is hot" do
-      @hot_vote.is_hot_bill?.should be_true
+      @hot_vote.is_hot_bill?.should be true
     end
 
     it "should be false that cold bill vote is hot" do
-      @cold_vote.is_hot_bill?.should be_false
+      @cold_vote.is_hot_bill?.should be false
     end
 
     it "should find hot bills" do
       hot_votes = Vote.hot_bills
 
       hot_votes.each do |vote|
-        vote.is_hot_bill?.should be_true
+        vote.is_hot_bill?.should be true
       end
     end
   end

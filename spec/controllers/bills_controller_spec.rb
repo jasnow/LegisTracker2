@@ -13,7 +13,7 @@ describe BillsController do
     it { should respond_with( :success ) }
     it { should render_template( :index ) }
     it { expect(assigns( :title )).to eq("Search results") }
-    it { assigns( :bills ).should be_true  }
+    it { assigns( :bills ).should be_truthy }
     it "should route '/bills' to bills/index" do
       expect({ :get => bills_path }).to route_to( :controller => "bills",
         :action => "index" )
@@ -49,7 +49,7 @@ describe BillsController do
   end
 
   describe BillsController, '#hot' do
-    pending do
+    skip do
       before( :each ) do
         @bill = FactoryGirl.create( :bill )
         get :hot, :id => @bill.id
@@ -67,7 +67,7 @@ describe BillsController do
   end
 
   describe BillsController, '#unhot' do
-    pending do
+    skip do
      before( :each ) do
         @bill = FactoryGirl.create( :bill )
         @watched_bill = @bill.watched_bills.new( :user_id => @user.id )

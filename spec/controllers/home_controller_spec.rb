@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HomeController do
+describe HomeController, :type => :controller do
   before( :each ) do
     @user = FactoryGirl.create( :user )
     sign_in @user
@@ -18,8 +18,8 @@ describe HomeController do
       @senate_feed = FactoryGirl.create( :senate_feed )
       get :index
     end
-    it { should respond_with( :success ) }
-    it { should render_template :index }
+    it { is_expected.to respond_with( :success ) }
+    it { is_expected.to render_template :index }
     it { expect(assigns(:title)).to eq('Home') }
 
     it "should route '/' to home/index" do

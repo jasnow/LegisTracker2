@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe BillVersion do
+describe BillVersion, :type => :model do
   before( :each ) do
     @version = FactoryGirl.create( :bill_version )
   end
-  it { should belong_to( :bill ) }
+  it { is_expected.to belong_to( :bill ) }
 
   it "should return versoin url" do
     expect(@version.url).to eq("http://www1.legis.ga.gov/legis/" +

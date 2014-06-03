@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Member do
-  it { should have_many( :sponsorships ) }
-  it { should have_many( :bills ).through( :sponsorships ) }
+describe Member, :type => :model do
+  it { is_expected.to have_many( :sponsorships ) }
+  it { is_expected.to have_many( :bills ).through( :sponsorships ) }
 
   describe "information formatted for display" do
     before( :each ) do

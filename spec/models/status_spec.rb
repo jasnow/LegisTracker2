@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe Status do
+describe Status, :type => :model do
   before(:each) do
     @bill = FactoryGirl.create( :bill )
     FactoryGirl.create( :status, :bill => @bill )
   end
 
-  it { should belong_to(:bill) }
-  it { should belong_to(:status_code) }
+  it { is_expected.to belong_to(:bill) }
+  it { is_expected.to belong_to(:status_code) }
 
   it "should create new status record" do
     previous_record_count = Status.count

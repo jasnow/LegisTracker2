@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MembersController do
+describe MembersController, :type => :controller do
   before( :each ) do
     @user = FactoryGirl.create( :user )
     sign_in @user
@@ -10,7 +10,7 @@ describe MembersController do
     before( :each ) do
       get :index
     end
-    it { should respond_with( :success ) }
+    it { is_expected.to respond_with( :success ) }
     it { expect(assigns( :title )).to eq( "Members") }
     it "should route members_path to members/index" do
       expect({ :get => members_path }).to route_to( :controller => "members",
@@ -23,7 +23,7 @@ describe MembersController do
       @member = FactoryGirl.create( :member )
       get :show, :id => @member.id
     end
-    it { should respond_with( :success ) }
+    it { is_expected.to respond_with( :success ) }
     it { expect(assigns(:title )).to eq(@member.name) }
     it { expect(assigns(:member)).to eq(@member) }
     it "should route member_path to members/show" do

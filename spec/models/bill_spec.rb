@@ -1,17 +1,17 @@
 require 'spec_helper'
 
-describe Bill do
+describe Bill, :type => :model do
   before( :each ) do
     @attr = FactoryGirl.attributes_for( :bill )
   end
 
-  it { should have_many( :statuses ) }
-  it { should have_many( :votes ) }
-  it { should have_many( :bill_versions ) }
-  it { should have_many( :sponsorships ) }
-  it { should have_many( :members ).through( :sponsorships ) }
-  it { should belong_to( :house_committee ) }
-  it { should belong_to( :senate_committee ) }
+  it { is_expected.to have_many( :statuses ) }
+  it { is_expected.to have_many( :votes ) }
+  it { is_expected.to have_many( :bill_versions ) }
+  it { is_expected.to have_many( :sponsorships ) }
+  it { is_expected.to have_many( :members ).through( :sponsorships ) }
+  it { is_expected.to belong_to( :house_committee ) }
+  it { is_expected.to belong_to( :senate_committee ) }
 
   it "should create new bill record" do
     previous_record_count = Bill.count

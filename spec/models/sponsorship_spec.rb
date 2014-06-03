@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Sponsorship do
-  it { should belong_to( :bill ) }
-  it { should belong_to( :member ) }
+describe Sponsorship, :type => :model do
+  it { is_expected.to belong_to( :bill ) }
+  it { is_expected.to belong_to( :member ) }
 
   describe "primary named scope" do
     before(:each) do

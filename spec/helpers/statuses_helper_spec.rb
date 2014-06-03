@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe StatusesHelper do
+describe StatusesHelper, :type => :helper do
   skip "add some examples to (or delete) #{__FILE__}"
 end

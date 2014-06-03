@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BillsController do
+describe BillsController, :type => :controller do
   before( :each ) do
     @user = FactoryGirl.create( :user )
     sign_in @user
@@ -10,10 +10,10 @@ describe BillsController do
     before( :each ) do
       get :index
     end
-    it { should respond_with( :success ) }
-    it { should render_template( :index ) }
+    it { is_expected.to respond_with( :success ) }
+    it { is_expected.to render_template( :index ) }
     it { expect(assigns( :title )).to eq("Search results") }
-    it { assigns( :bills ).should be_truthy }
+    it { expect(assigns( :bills )).to be_truthy }
     it "should route '/bills' to bills/index" do
       expect({ :get => bills_path }).to route_to( :controller => "bills",
         :action => "index" )
@@ -25,8 +25,8 @@ describe BillsController do
       @bill = FactoryGirl.create( :bill )
       get :show, :id => @bill.id
     end
-    it { should respond_with( :success ) }
-    it { should render_template( :show ) }
+    it { is_expected.to respond_with( :success ) }
+    it { is_expected.to render_template( :show ) }
     it { expect(assigns(:bill )).to eq(@bill) }
     it { expect(assigns(:title)).to eq(@bill.number) }
     it "should route bill_path to bills/should" do
@@ -39,8 +39,8 @@ describe BillsController do
     before( :each ) do
       get :search
     end
-    it { should respond_with( :success ) }
-    it { should render_template( :search ) }
+    it { is_expected.to respond_with( :success ) }
+    it { is_expected.to render_template( :search ) }
     it { expect(assigns(:title)).to eq("Advanced Search") }
     it "should route search_path to bills/search" do
       expect({ :get => search_path }).to route_to( :controller => "bills",
@@ -55,8 +55,8 @@ describe BillsController do
         get :hot, :id => @bill.id
       end
 
-      it { should respond_with(:redirect) }
-      it { should set_the_flash.to(
+      it { is_expected.to respond_with(:redirect) }
+      it { is_expected.to set_the_flash.to(
         "Bill successfully added to the watch list" ) }
 
       it "should route hot_bill_path to bills/hot" do
@@ -75,8 +75,8 @@ describe BillsController do
         get :unhot, :id => @bill.id
       end
 
-      it { should respond_with( :redirect ) }
-      it { should set_the_flash.to(
+      it { is_expected.to respond_with( :redirect ) }
+      it { is_expected.to set_the_flash.to(
         "Bill successfully removed to watch list" ) }
       it { assigns(:bill).should eq(@bill) }
 
@@ -92,8 +92,8 @@ describe BillsController do
       @bill = FactoryGirl.create( :bill )
       get :add_tag, :id => @bill.id, :context => 'topics', :tag => 'taxes'
     end
-    it { should respond_with( :redirect ) }
-    it { should set_the_flash.to(/Bill successfully tagged with topic/) }
+    it { is_expected.to respond_with( :redirect ) }
+    it { is_expected.to set_the_flash.to(/Bill successfully tagged with topic/) }
     it { expect(assigns(:bill)).to eq(@bill) }
     it "should include 'taxes' tag in topics_list" do
       expect(@bill.topic_list).to include( 'taxes' )

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe VotesController do
+describe VotesController, :type => :controller do
   before( :each ) do
     @user = FactoryGirl.create( :user )
     sign_in @user
@@ -12,7 +12,7 @@ describe VotesController do
       @vote = FactoryGirl.create( :vote, :bill => @bill )
       get :show, :id => @vote.id
     end
-    it { should respond_with( :success ) }
+    it { is_expected.to respond_with( :success ) }
     it { expect(assigns(:vote )).to eq(@vote) }
     it { expect(assigns(:title)).to eq(
       "#{@vote.legislation}: #{@vote.description}") }
@@ -24,9 +24,9 @@ describe VotesController do
       @vote = FactoryGirl.create( :vote )
       get :key, :id => @vote.id
     end
-    it { should respond_with( :redirect ) }
+    it { is_expected.to respond_with( :redirect ) }
     it { expect(assigns( :vote )).to eq(@vote) }
-    it { should set_the_flash.to( "Successfully tagged as key vote" ) }
+    it { is_expected.to set_the_flash.to( "Successfully tagged as key vote" ) }
   end
 
   describe VotesController, '#unkey' do
@@ -36,8 +36,8 @@ describe VotesController do
       @vote.save
       get :unkey, :id => @vote.id
     end
-    it { should respond_with( :redirect ) }
+    it { is_expected.to respond_with( :redirect ) }
     it { expect(assigns(:vote)).to eq(@vote) }
-    it { should set_the_flash.to( "Successfully removed tag as key vote" ) }
+    it { is_expected.to set_the_flash.to( "Successfully removed tag as key vote" ) }
   end
 end

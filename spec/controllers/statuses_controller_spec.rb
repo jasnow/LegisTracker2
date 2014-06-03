@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe StatusesController do
+describe StatusesController, :type => :controller do
   before( :each ) do
     @user = FactoryGirl.create( :user )
     sign_in @user
@@ -13,8 +13,8 @@ describe StatusesController do
   end
 
   describe StatusesController, "#index" do
-    it { should respond_with( :success ) }
-    it { should render_template( :index ) }
+    it { is_expected.to respond_with( :success ) }
+    it { is_expected.to render_template( :index ) }
     it { expect(assigns(:title      )).to eq('Daily bill status report') }
     it { expect(assigns(:status_date)).to eq(Status.last_date) }
     it { expect(assigns(:events     )).to eq(Status.find_for_date(

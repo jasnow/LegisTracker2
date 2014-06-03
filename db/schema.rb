@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140405171912) do
+ActiveRecord::Schema.define(:version => 20140603003004) do
 
   create_table "bill_versions", :force => true do |t|
     t.integer "number"

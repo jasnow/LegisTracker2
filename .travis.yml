@@ -5,6 +5,7 @@ rvm:
 
 before_script:
   - cp config/database.sqlite3.yml config/database.yml
+  - bundle exec rake db:drop:all
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rake db:test:prepare

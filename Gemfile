@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.18'
-gem 'rack-ssl', '1.3.4'
 
 gem 'devise'
 gem 'acts-as-taggable-on'
@@ -49,7 +48,7 @@ group :development, :test do
   #gem 'pg'
   gem 'taps'
 
-  gem 'rspec-rails', '3.0.0'
+  gem 'rspec-rails'
   gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'faker'

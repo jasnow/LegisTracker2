@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140603003004) do
+ActiveRecord::Schema.define(:version => 20140713155346) do
 
   create_table "bill_versions", :force => true do |t|
     t.integer "number"
@@ -141,6 +141,7 @@ ActiveRecord::Schema.define(:version => 20140603003004) do
   end
 
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], :name => "taggings_idx", :unique => true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
     t.string  "name"

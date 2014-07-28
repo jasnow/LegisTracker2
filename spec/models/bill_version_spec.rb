@@ -6,7 +6,7 @@ describe BillVersion, :type => :model do
   end
   it { is_expected.to belong_to( :bill ) }
 
-  it "should return versoin url" do
+  it "should return version url" do
     expect(@version.url).to eq("http://www1.legis.ga.gov/legis/" +
       "2011_12/versions/#{@version.fileid}")
   end

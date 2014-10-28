@@ -1,6 +1,6 @@
 desc "Update data"
 task :cron => :environment do
-  if Time.now.hour == 7
+  if Time.zone.now.hour == 7
     puts "Reloading data from XML"
     Bill.reload_from_xml
     Vote.reload_from_xml

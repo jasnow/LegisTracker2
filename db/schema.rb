@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20140713155346) do
     t.integer "district"
     t.string  "house",                        :limit => 1
     t.string  "party",                        :limit => 1
-    t.text    "seat",                         :limit => 4
+    t.text    "seat",                         :limit => 255
     t.string  "vote_id_string"
     t.integer "imsp_member_id"
     t.integer "total_instate_dollars"

@@ -56,7 +56,7 @@ describe BillsController, :type => :controller do
       end
 
       it { is_expected.to respond_with(:redirect) }
-      it { is_expected.to set_the_flash.to(
+      it { is_expected.to set_flash.to(
         "Bill successfully added to the watch list" ) }
 
       it "should route hot_bill_path to bills/hot" do
@@ -76,7 +76,7 @@ describe BillsController, :type => :controller do
       end
 
       it { is_expected.to respond_with( :redirect ) }
-      it { is_expected.to set_the_flash.to(
+      it { is_expected.to set_flash.to(
         "Bill successfully removed to watch list" ) }
       it { assigns(:bill).should eq(@bill) }
 
@@ -93,7 +93,7 @@ describe BillsController, :type => :controller do
       get :add_tag, :id => @bill.id, :context => 'topics', :tag => 'taxes'
     end
     it { is_expected.to respond_with( :redirect ) }
-    it { is_expected.to set_the_flash.to(/Bill successfully tagged with topic/) }
+    it { is_expected.to set_flash.to(/Bill successfully tagged with topic/) }
     it { expect(assigns(:bill)).to eq(@bill) }
     it "should include 'taxes' tag in topics_list" do
       expect(@bill.topic_list).to include( 'taxes' )

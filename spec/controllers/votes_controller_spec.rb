@@ -26,7 +26,7 @@ describe VotesController, :type => :controller do
     end
     it { is_expected.to respond_with( :redirect ) }
     it { expect(assigns( :vote )).to eq(@vote) }
-    it { is_expected.to set_the_flash.to( "Successfully tagged as key vote" ) }
+    it { is_expected.to set_flash.to( "Successfully tagged as key vote" ) }
   end
 
   describe VotesController, '#unkey' do
@@ -38,6 +38,6 @@ describe VotesController, :type => :controller do
     end
     it { is_expected.to respond_with( :redirect ) }
     it { expect(assigns(:vote)).to eq(@vote) }
-    it { is_expected.to set_the_flash.to( "Successfully removed tag as key vote" ) }
+    it { is_expected.to set_flash.to( "Successfully removed tag as key vote" ) }
   end
 end

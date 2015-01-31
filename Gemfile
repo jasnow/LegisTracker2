@@ -36,7 +36,7 @@ gem 'jquery-ui-rails'
 gem 'thin'
 
 group :development do
-  gem 'dawn', :require => false
+  gem 'dawnscanner', :require => false
 end
 
 group :development, :test do
@@ -70,7 +70,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber', '2.0.0.beta.5'
+  gem 'cucumber', '2.0.0.rc.3'
   gem 'cucumber-rails', :require => false
 
   # database_cleaner is not required, but highly recommended

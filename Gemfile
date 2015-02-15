@@ -54,6 +54,7 @@ group :development, :test do
   gem 'faker'
   gem 'webrat'
   gem "capybara"
+  gem 'test-unit'
 
   #10/25/2012: Checked/Appears to not be used in production.
   gem 'capybara-screenshot'

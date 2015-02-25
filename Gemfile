@@ -46,7 +46,6 @@ group :development, :test do
 
   gem 'yaml_db'
   #gem 'pg'
-  gem 'taps'
 
   gem 'rspec-rails'
   gem 'shoulda'

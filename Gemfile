@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.21'
+gem 'ffi', '1.9.6'
 
 gem 'devise'
 gem 'acts-as-taggable-on'

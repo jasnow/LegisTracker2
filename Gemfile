@@ -1,23 +1,18 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.21'
-gem 'ffi', '1.9.6'
 
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'meta_search'
-
 gem 'blueprint-rails'
-
-# (now use heroku toolbelt) gem 'heroku'
-
 gem 'feedjira'
-
 gem 'googlecharts'
-
 gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
-
 gem 'nokogiri'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,11 +25,6 @@ group :assets do
 
   gem 'uglifier'
 end
-
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-
-gem 'thin'
 
 group :development do
   gem 'dawnscanner', :require => false

@@ -8,11 +8,12 @@ gem 'meta_search'
 gem 'blueprint-rails'
 gem 'feedjira'
 gem 'googlecharts'
-gem 'govkit', :path => "#{File.expand_path(__FILE__)}/../vendor/gems"
+gem 'govkit', path: "#{File.expand_path(__FILE__)}/../vendor/gems"
 gem 'nokogiri'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'thin'
+gem 'overcommit'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,7 +28,7 @@ group :assets do
 end
 
 group :development do
-  gem 'dawnscanner', :require => false
+  gem 'dawnscanner', require: false
 end
 
 group :development, :test do
@@ -36,17 +37,17 @@ group :development, :test do
   gem 'mysql2'
 
   gem 'yaml_db'
-  #gem 'pg'
+  # gem 'pg'
 
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'webrat'
-  gem "capybara"
+  gem 'capybara'
   gem 'test-unit'
 
-  #10/25/2012: Checked/Appears to not be used in production.
+  # 10/25/2012: Checked/Appears to not be used in production.
   gem 'capybara-screenshot'
 
   gem 'rails-footnotes'
@@ -62,22 +63,21 @@ end
 
 group :test do
   gem 'cucumber'
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', require: false
 
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
-#, '1.0.1'
-  gem "email_spec"
+  gem 'email_spec'
 
-  gem "autotest-rails"
-  gem "autotest-fsevent"
-  gem "autotest-growl"
-  gem "launchy"
+  gem 'autotest-rails'
+  gem 'autotest-fsevent'
+  gem 'autotest-growl'
+  gem 'launchy'
 
   # Analysis Gems
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
 end
 
 group :production, :staging do
-  gem "pg"
+  gem 'pg'
 end

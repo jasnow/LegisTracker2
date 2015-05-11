@@ -250,7 +250,7 @@ GEM
       activesupport (= 3.2.21)
       bundler (~> 1.0)
       railties (= 3.2.21)
-    rails-footnotes (4.1.6)
+    rails-footnotes (4.1.7)
       rails (>= 3.2)
     railties (3.2.21)
       actionpack (= 3.2.21)

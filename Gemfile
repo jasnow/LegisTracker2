@@ -40,7 +40,7 @@ group :development, :test do
   # gem 'pg'
 
   gem 'rspec-rails'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'webrat'

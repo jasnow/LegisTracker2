@@ -133,7 +133,7 @@ GEM
       sys-uname
       terminal-table
     debug_inspector (0.0.2)
-    devise (3.5.2)
+    devise (3.5.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -419,4 +419,4 @@ DEPENDENCIES
   yaml_db
 
 BUNDLED WITH
-   1.10.6
+   1.11.0

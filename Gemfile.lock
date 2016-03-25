@@ -355,7 +355,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.47)
+    tzinfo (0.3.48)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
     uuidtools (2.1.5)

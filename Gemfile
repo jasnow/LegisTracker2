@@ -56,7 +56,7 @@ group :development, :test do
   gem 'binding_of_caller'
 
   # Analysis Gems
-  gem 'brakeman', '3.2.1' # LOCKED DOWN
+  gem 'brakeman'
   gem 'cane'
   gem 'holepicker'
 end

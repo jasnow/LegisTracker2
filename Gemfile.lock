@@ -196,7 +196,7 @@ GEM
       faraday_middleware (~> 0.9)
       loofah (~> 2.0)
       sax-machine (~> 1.0)
-    ffi (1.9.11)
+    ffi (1.9.12)
     gherkin (4.0.0)
     googlecharts (1.6.12)
     haml (4.0.7)
@@ -339,7 +339,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.50)
+    tzinfo (0.3.51)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
     uuidtools (2.1.5)

@@ -327,7 +327,7 @@ GEM
     sys-uname (1.0.2)
       ffi (>= 1.0.0)
     terminal-table (1.6.0)
-    test-unit (3.2.0)
+    test-unit (3.2.1)
       power_assert
     thin (1.7.0)
       daemons (~> 1.0, >= 1.0.9)

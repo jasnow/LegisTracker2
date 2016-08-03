@@ -101,7 +101,7 @@ GEM
       railties (>= 3, < 5)
     cucumber-wire (0.0.1)
     cvss (0.99.0)
-    daemons (1.2.3)
+    daemons (1.2.4)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)

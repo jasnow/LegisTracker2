@@ -339,7 +339,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.51)
-    uglifier (3.0.1)
+    uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
     uuidtools (2.1.5)
     warden (1.2.6)

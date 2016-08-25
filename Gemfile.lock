@@ -63,7 +63,7 @@ GEM
     builder (3.0.4)
     cane (3.0.0)
       parallel
-    capybara (2.8.0)
+    capybara (2.8.1)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)

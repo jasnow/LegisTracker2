@@ -83,7 +83,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.10.0)
+    coffee-script-source (1.11.1)
     cucumber (2.4.0)
       builder (>= 2.1.2)
       cucumber-core (~> 1.5.0)
@@ -327,7 +327,7 @@ GEM
       ffi (>= 1.0.0)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
-    test-unit (3.2.2)
+    test-unit (3.2.3)
       power_assert
     thin (1.7.0)
       daemons (~> 1.0, >= 1.0.9)

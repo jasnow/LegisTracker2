@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'thin'
 gem 'overcommit'
+gem 'rainbow', '< 2.2.0' # TEMP/WORKAROUND - LOCKED DOWN
 
 # Gems used only for assets and not required
 # in production environments by default.

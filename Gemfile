@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.22.5'
-gem 'rainbow', git: 'https://github.com/sickill/rainbow' # WORKAROUND/TEMP - LOCKED DOWN
 
 gem 'devise'
 gem 'acts-as-taggable-on'

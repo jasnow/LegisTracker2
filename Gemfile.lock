@@ -197,7 +197,7 @@ GEM
       faraday_middleware (>= 0.9)
       loofah (>= 2.0)
       sax-machine (>= 1.0)
-    ffi (1.9.17)
+    ffi (1.9.18)
     gherkin (4.0.0)
     googlecharts (1.6.12)
     haml (4.0.7)

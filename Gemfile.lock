@@ -198,7 +198,7 @@ GEM
       loofah (>= 2.0)
       sax-machine (>= 1.0)
     ffi (1.9.18)
-    gherkin (4.1.0)
+    gherkin (4.1.1)
     googlecharts (1.6.12)
     haml (4.0.7)
       tilt

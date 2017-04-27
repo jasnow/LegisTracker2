@@ -200,7 +200,8 @@ GEM
     ffi (1.9.18)
     gherkin (4.1.1)
     googlecharts (1.6.12)
-    haml (4.0.7)
+    haml (5.0.0)
+      temple (>= 0.8.0)
       tilt
     hike (1.2.3)
     holepicker (0.3.3)
@@ -326,6 +327,7 @@ GEM
     stringex (1.5.1)
     sys-uname (1.0.3)
       ffi (>= 1.0.0)
+    temple (0.8.0)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
     test-unit (3.2.3)

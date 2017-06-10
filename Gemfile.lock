@@ -225,7 +225,7 @@ GEM
     logger-colors (1.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.5.4)
+    mail (2.5.5)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     meta_search (1.1.3)

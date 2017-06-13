@@ -332,7 +332,7 @@ GEM
       unicode-display_width (~> 1.1, >= 1.1.1)
     test-unit (3.2.4)
       power_assert
-    thin (1.7.0)
+    thin (1.7.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
       rack (>= 1, < 3)

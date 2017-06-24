@@ -330,7 +330,7 @@ GEM
     temple (0.8.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    test-unit (3.2.4)
+    test-unit (3.2.5)
       power_assert
     thin (1.7.1)
       daemons (~> 1.0, >= 1.0.9)

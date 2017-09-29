@@ -62,7 +62,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber', '3.0.0.pre.2' # LOCKED DOWN
+  gem 'cucumber'
   gem 'cucumber-rails', require: false
 
   # database_cleaner is not required, but highly recommended

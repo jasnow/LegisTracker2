@@ -184,7 +184,7 @@ GEM
     email_spec (1.6.0)
       launchy (~> 2.1)
       mail (~> 2.2)
-    erubi (1.6.1)
+    erubi (1.7.0)
     erubis (2.7.0)
     eventmachine (1.2.5)
     execjs (2.7.0)

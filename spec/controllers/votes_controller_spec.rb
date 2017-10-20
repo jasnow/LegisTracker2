@@ -2,14 +2,14 @@ require 'spec_helper'
 
 describe VotesController, :type => :controller do
   before( :each ) do
-    @user = FactoryGirl.create( :user )
+    @user = FactoryBot.create( :user )
     sign_in @user
   end
 
   describe VotesController, '#show' do
     before( :each ) do
-      @bill = FactoryGirl.create( :bill )
-      @vote = FactoryGirl.create( :vote, :bill => @bill )
+      @bill = FactoryBot.create( :bill )
+      @vote = FactoryBot.create( :vote, :bill => @bill )
       get :show, :id => @vote.id
     end
     it { is_expected.to respond_with( :success ) }
@@ -21,7 +21,7 @@ describe VotesController, :type => :controller do
 
   describe VotesController, '#key' do
     before( :each ) do
-      @vote = FactoryGirl.create( :vote )
+      @vote = FactoryBot.create( :vote )
       get :key, :id => @vote.id
     end
     it { is_expected.to respond_with( :redirect ) }
@@ -31,7 +31,7 @@ describe VotesController, :type => :controller do
 
   describe VotesController, '#unkey' do
     before( :each ) do
-      @vote = FactoryGirl.create( :vote )
+      @vote = FactoryBot.create( :vote )
       @vote.key_list.add( 'key' )
       @vote.save
       get :unkey, :id => @vote.id

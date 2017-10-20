@@ -2,13 +2,13 @@ require 'spec_helper'
 
 describe StatusesController, :type => :controller do
   before( :each ) do
-    @user = FactoryGirl.create( :user )
+    @user = FactoryBot.create( :user )
     sign_in @user
   end
   before( :each ) do
-    @bill = FactoryGirl.create( :bill )
-    @status = FactoryGirl.create( :status, :bill => @bill )
-    @votes = FactoryGirl.create( :vote, :bill => @bill )
+    @bill = FactoryBot.create( :bill )
+    @status = FactoryBot.create( :status, :bill => @bill )
+    @votes = FactoryBot.create( :vote, :bill => @bill )
     get :index
   end
 

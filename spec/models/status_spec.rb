@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Status, :type => :model do
   before(:each) do
-    @bill = FactoryGirl.create( :bill )
-    FactoryGirl.create( :status, :bill => @bill )
+    @bill = FactoryBot.create( :bill )
+    FactoryBot.create( :status, :bill => @bill )
   end
 
   it { is_expected.to belong_to(:bill) }
@@ -11,13 +11,13 @@ describe Status, :type => :model do
 
   it "should create new status record" do
     previous_record_count = Status.count
-    status = @bill.statuses.new( FactoryGirl.attributes_for( :status ) )
+    status = @bill.statuses.new( FactoryBot.attributes_for( :status ) )
     expect(status.save).to be true
     expect(Status.count).to eq(previous_record_count + 1)
   end
 
   it "should have correct bill id" do
-    status = @bill.statuses.new( FactoryGirl.attributes_for( :status ) )
+    status = @bill.statuses.new( FactoryBot.attributes_for( :status ) )
     expect(status.save).to be true
     expect(status.bill_id).to eq(@bill.id)
   end
@@ -29,7 +29,7 @@ describe Status, :type => :model do
 
   describe "last_date method" do
     before( :each ) do
-      FactoryGirl.create( :status, :bill => @bill,
+      FactoryBot.create( :status, :bill => @bill,
         :status_date => '2011-01-05 12:00:00' )
     end
 
@@ -44,14 +44,14 @@ describe Status, :type => :model do
 
   describe "most_recent method" do
     before( :each ) do
-      FactoryGirl.create( :status, :bill => @bill,
+      FactoryBot.create( :status, :bill => @bill,
         :status_date => '2011-01-10 12:00:00' )
-      FactoryGirl.create( :status, :bill => @bill,
+      FactoryBot.create( :status, :bill => @bill,
         :status_date => '2011-01-05 12:00:00' )
     end
 
     it "should include all statuses on most recent date" do
-      FactoryGirl.create( :status, :bill=> @bill,
+      FactoryBot.create( :status, :bill=> @bill,
         :status_date => '2011-01-10 15:00:00')
       expect(Status.where( "DATE(status_date) = ?",
         Status.last_date )).to eq(Status.most_recent)
@@ -69,16 +69,16 @@ describe Status, :type => :model do
 
   describe "find_for_date method" do
     before( :each ) do
-      FactoryGirl.create( :status, :bill => @bill,
+      FactoryBot.create( :status, :bill => @bill,
         :status_date => '2011-01-05 12:00:00' )
-      FactoryGirl.create( :status, :bill => @bill,
+      FactoryBot.create( :status, :bill => @bill,
         :status_date => '2011-01-06 12:00:00' )
-      FactoryGirl.create( :status, :bill => @bill,
+      FactoryBot.create( :status, :bill => @bill,
         :status_date => '2011-01-07 13:00:00' )
     end
 
     it "should find find all statuses for a given date" do
-      FactoryGirl.create( :status, :bill => @bill,
+      FactoryBot.create( :status, :bill => @bill,
         :status_date => '2011-01-05 13:00:00' )
       expect(Status.where( "DATE(status_date) = ?", '2011-01-05'
         )).to eq(Status.find_for_date( '2011-01-05' ))

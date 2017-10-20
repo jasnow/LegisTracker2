@@ -2,21 +2,21 @@ require 'spec_helper'
 
 describe Vote, :type => :model do
   before(:each) do
-    @bill = FactoryGirl.create( :bill )
-    FactoryGirl.create( :vote, :bill => @bill )
+    @bill = FactoryBot.create( :bill )
+    FactoryBot.create( :vote, :bill => @bill )
   end
 
   it { is_expected.to belong_to(:bill) }
 
   it "should create new vote record" do
     previous_record_count = Vote.count
-    vote = @bill.votes.new( FactoryGirl.attributes_for( :vote ) )
+    vote = @bill.votes.new( FactoryBot.attributes_for( :vote ) )
     expect(vote.save).to be true
     expect(Vote.count).to eq(previous_record_count + 1)
   end
 
   it "should have correct bill id" do
-    vote = @bill.votes.new( FactoryGirl.attributes_for( :vote ) )
+    vote = @bill.votes.new( FactoryBot.attributes_for( :vote ) )
     expect(vote.save).to be true
     expect(vote.bill_id).to eq(@bill.id)
   end
@@ -29,7 +29,7 @@ describe Vote, :type => :model do
 
   describe "last_date method" do
     before( :each ) do
-      FactoryGirl.create( :vote, :bill => @bill,
+      FactoryBot.create( :vote, :bill => @bill,
         :date => '2011-01-05 12:00:00' )
     end
 
@@ -44,12 +44,12 @@ describe Vote, :type => :model do
 
   describe "most_recent method" do
     before( :each ) do
-      FactoryGirl.create( :vote, :bill => @bill,
+      FactoryBot.create( :vote, :bill => @bill,
         :date => '2011-01-05 12:00:00' )
     end
 
     it "should include all statuses on most recent date" do
-      FactoryGirl.create( :vote, :bill=> @bill,
+      FactoryBot.create( :vote, :bill=> @bill,
         :date => '2011-01-10 15:00:00')
       expect(Vote.where( "DATE(date) = ?", Vote.last_date
         )).to eq(Vote.most_recent)
@@ -66,11 +66,11 @@ describe Vote, :type => :model do
 
   describe "find_for_date" do
     before( :each ) do
-      FactoryGirl.create( :vote, :bill => @bill,
+      FactoryBot.create( :vote, :bill => @bill,
         :date => '2011-01-05 12:00:00' )
-      FactoryGirl.create( :vote, :bill => @bill,
+      FactoryBot.create( :vote, :bill => @bill,
         :date => '2011-01-05 12:00:00' )
-      FactoryGirl.create( :vote, :bill => @bill,
+      FactoryBot.create( :vote, :bill => @bill,
         :date => '2011-01-06 12:00:00' )
     end
 
@@ -92,7 +92,7 @@ describe Vote, :type => :model do
 
   describe "taggable as key vote" do
     before( :each ) do
-      @vote = FactoryGirl.create( :vote )
+      @vote = FactoryBot.create( :vote )
     end
 
     it "should take tag 'key'" do\
@@ -101,7 +101,7 @@ describe Vote, :type => :model do
     end
 
     it "should find votes tagged as key" do
-      key_vote = FactoryGirl.create( :vote )
+      key_vote = FactoryBot.create( :vote )
       key_vote.key_list.add( 'key' )
       key_vote.save
 
@@ -120,13 +120,13 @@ describe Vote, :type => :model do
 
   describe "votes on hot bills" do
     before( :each ) do
-      @hot_bill = FactoryGirl.create( :bill )
+      @hot_bill = FactoryBot.create( :bill )
       @hot_bill.hot_list.add( 'hot' )
       @hot_bill.save
-      @hot_vote = FactoryGirl.create( :vote, :bill => @hot_bill )
+      @hot_vote = FactoryBot.create( :vote, :bill => @hot_bill )
 
-      @cold_bill = FactoryGirl.create( :bill, :num => 2, :number => 'HB2' )
-      @cold_vote = FactoryGirl.create( :vote, :bill => @cold_bill,
+      @cold_bill = FactoryBot.create( :bill, :num => 2, :number => 'HB2' )
+      @cold_vote = FactoryBot.create( :vote, :bill => @cold_bill,
         :legislation => 'HB 2' )
     end
 

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe MembersController, :type => :controller do
   before( :each ) do
-    @user = FactoryGirl.create( :user )
+    @user = FactoryBot.create( :user )
     sign_in @user
   end
 
@@ -20,7 +20,7 @@ describe MembersController, :type => :controller do
 
   describe MembersController, '#show' do
     before( :each ) do
-      @member = FactoryGirl.create( :member )
+      @member = FactoryBot.create( :member )
       get :show, :id => @member.id
     end
     it { is_expected.to respond_with( :success ) }

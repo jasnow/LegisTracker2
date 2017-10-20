@@ -2,20 +2,20 @@ require 'spec_helper'
 
 describe HomeController, :type => :controller do
   before( :each ) do
-    @user = FactoryGirl.create( :user )
+    @user = FactoryBot.create( :user )
     sign_in @user
   end
 
   describe HomeController, '#index' do
     before( :each ) do
-      @bill = FactoryGirl.create( :bill )
+      @bill = FactoryBot.create( :bill )
       @bill.hot_list.add( 'hot' )
       @bill.save
 
-      @status = FactoryGirl.create( :status, :bill => @bill )
-      @votes = FactoryGirl.create( :vote, :bill => @bill )
-      @house_feed = FactoryGirl.create( :house_feed )
-      @senate_feed = FactoryGirl.create( :senate_feed )
+      @status = FactoryBot.create( :status, :bill => @bill )
+      @votes = FactoryBot.create( :vote, :bill => @bill )
+      @house_feed = FactoryBot.create( :house_feed )
+      @senate_feed = FactoryBot.create( :senate_feed )
       get :index
     end
     it { is_expected.to respond_with( :success ) }

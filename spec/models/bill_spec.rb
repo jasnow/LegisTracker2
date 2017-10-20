@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Bill, :type => :model do
   before( :each ) do
-    @attr = FactoryGirl.attributes_for( :bill )
+    @attr = FactoryBot.attributes_for( :bill )
   end
 
   it { is_expected.to have_many( :statuses ) }
@@ -22,17 +22,17 @@ describe Bill, :type => :model do
 
   describe "taggable as hot bill" do
     before( :each ) do
-      @bill = FactoryGirl.create( :bill )
+      @bill = FactoryBot.create( :bill )
     end
 
     it "should take tag 'hot'" do
-      bill = FactoryGirl.create( :bill )
+      bill = FactoryBot.create( :bill )
       bill.hot_list.add( 'hot' )
       expect(bill.save).to be true
     end
 
     it "should find bills tagged as hot" do
-      hot_bill = FactoryGirl.create( :bill )
+      hot_bill = FactoryBot.create( :bill )
       hot_bill.hot_list.add( 'hot' )
       hot_bill.save
 
@@ -53,7 +53,7 @@ describe Bill, :type => :model do
 
   describe "topic tags" do
     before( :each ) do
-      @bill = FactoryGirl.create( :bill )
+      @bill = FactoryBot.create( :bill )
     end
 
     it "should take topic tag" do
@@ -71,12 +71,12 @@ describe Bill, :type => :model do
 
   describe "versions" do
     before( :each ) do
-      @bill = FactoryGirl.create( :bill )
-      @first_version = FactoryGirl.create( :bill_version, :bill => @bill )
+      @bill = FactoryBot.create( :bill )
+      @first_version = FactoryBot.create( :bill_version, :bill => @bill )
     end
 
     it "should find latest version" do
-      newer_version = FactoryGirl.create( :bill_version,
+      newer_version = FactoryBot.create( :bill_version,
                                       :bill => @bill,
                                       :number => @first_version.number + 1 )
 
@@ -86,8 +86,8 @@ describe Bill, :type => :model do
 
   describe "ccrossover" do
     before( :each ) do
-      @not_yet_bill = FactoryGirl.create( :bill )
-      @crossed_over_bill = FactoryGirl.create( :bill,
+      @not_yet_bill = FactoryBot.create( :bill )
+      @crossed_over_bill = FactoryBot.create( :bill,
                                            :num            => "2",
                                            :number         => "HB 2",
                                            :status_code_id => 'HPA',

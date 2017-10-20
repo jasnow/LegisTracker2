@@ -6,7 +6,7 @@ describe Member, :type => :model do
 
   describe "information formatted for display" do
     before( :each ) do
-      @member = FactoryGirl.create( :member )
+      @member = FactoryBot.create( :member )
     end
 
     it "should return last_name, first_name as name" do
@@ -25,8 +25,8 @@ describe Member, :type => :model do
 
   describe "party search scopes" do
     before( :each ) do
-      FactoryGirl.build( :member, :party => 'D' )
-      FactoryGirl.build( :member, :party => 'R' )
+      FactoryBot.build( :member, :party => 'D' )
+      FactoryBot.build( :member, :party => 'R' )
     end
 
     it "should return only democratic members" do
@@ -47,8 +47,8 @@ describe Member, :type => :model do
 
   describe "house search scopes" do
     before( :each ) do
-      FactoryGirl.build( :member, :house => 'H' )
-      FactoryGirl.build( :member, :house => 'S' )
+      FactoryBot.build( :member, :house => 'H' )
+      FactoryBot.build( :member, :house => 'S' )
     end
 
     it "should find only house members" do

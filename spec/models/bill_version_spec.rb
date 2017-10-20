@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe BillVersion, :type => :model do
   before( :each ) do
-    @version = FactoryGirl.create( :bill_version )
+    @version = FactoryBot.create( :bill_version )
   end
   it { is_expected.to belong_to( :bill ) }
 
@@ -13,7 +13,7 @@ describe BillVersion, :type => :model do
 
   describe "ordered by number" do
     before( :each ) do
-      @newer_version = FactoryGirl.create( :bill_version,
+      @newer_version = FactoryBot.create( :bill_version,
         :number => @version.number + 1 )
     end
 

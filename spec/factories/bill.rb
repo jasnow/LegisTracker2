@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :bill do
     btype 'HB'
     num '1'

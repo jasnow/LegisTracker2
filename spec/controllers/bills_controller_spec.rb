@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe BillsController, :type => :controller do
   before( :each ) do
-    @user = FactoryGirl.create( :user )
+    @user = FactoryBot.create( :user )
     sign_in @user
   end
 
@@ -22,7 +22,7 @@ describe BillsController, :type => :controller do
 
   describe BillsController, '#show' do
     before( :each ) do
-      @bill = FactoryGirl.create( :bill )
+      @bill = FactoryBot.create( :bill )
       get :show, :id => @bill.id
     end
     it { is_expected.to respond_with( :success ) }
@@ -51,7 +51,7 @@ describe BillsController, :type => :controller do
   describe BillsController, '#hot' do
     skip do
       before( :each ) do
-        @bill = FactoryGirl.create( :bill )
+        @bill = FactoryBot.create( :bill )
         get :hot, :id => @bill.id
       end
 
@@ -69,7 +69,7 @@ describe BillsController, :type => :controller do
   describe BillsController, '#unhot' do
     skip do
      before( :each ) do
-        @bill = FactoryGirl.create( :bill )
+        @bill = FactoryBot.create( :bill )
         @watched_bill = @bill.watched_bills.new( :user_id => @user.id )
         @watched_bill.save
         get :unhot, :id => @bill.id
@@ -89,7 +89,7 @@ describe BillsController, :type => :controller do
 
   describe BillsController, '#add_tag' do
     before( :each ) do
-      @bill = FactoryGirl.create( :bill )
+      @bill = FactoryBot.create( :bill )
       get :add_tag, :id => @bill.id, :context => 'topics', :tag => 'taxes'
     end
     it { is_expected.to respond_with( :redirect ) }

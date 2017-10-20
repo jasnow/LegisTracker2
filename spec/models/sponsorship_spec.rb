@@ -6,8 +6,8 @@ describe Sponsorship, :type => :model do
 
   describe "primary named scope" do
     before(:each) do
-      FactoryGirl.create( :sponsorship, :seq => 1 )
-      FactoryGirl.create( :sponsorship, :seq => 2 )
+      FactoryBot.create( :sponsorship, :seq => 1 )
+      FactoryBot.create( :sponsorship, :seq => 2 )
     end
 
     it "should find primary sponsorships" do
@@ -17,8 +17,8 @@ describe Sponsorship, :type => :model do
 
   describe "secondary named scope" do
     before(:each) do
-      FactoryGirl.create( :sponsorship, :seq => 1 )
-      FactoryGirl.create( :sponsorship, :seq => 2 )
+      FactoryBot.create( :sponsorship, :seq => 1 )
+      FactoryBot.create( :sponsorship, :seq => 2 )
     end
 
     it "should find primary sponsorships" do
@@ -28,8 +28,8 @@ describe Sponsorship, :type => :model do
 
   describe "methods provided by Member model" do
     before( :each ) do |variable|
-      @member = FactoryGirl.create( :member )
-      @sponsorship = FactoryGirl.create( :sponsorship, :member => @member )
+      @member = FactoryBot.create( :member )
+      @sponsorship = FactoryBot.create( :sponsorship, :member => @member )
     end
 
     it "should provide name" do

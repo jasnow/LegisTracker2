@@ -265,7 +265,7 @@ GEM
     polyglot (0.3.5)
     power_assert (1.1.1)
     ptools (1.3.5)
-    public_suffix (3.0.0)
+    public_suffix (3.0.1)
     rack (1.4.7)
     rack-cache (1.7.1)
       rack (>= 0.4)

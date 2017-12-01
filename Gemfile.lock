@@ -107,7 +107,7 @@ GEM
       mime-types (>= 1.16, < 4)
       nokogiri (~> 1.5)
       railties (>= 3, < 5.1)
-    cucumber-tag_expressions (1.1.0)
+    cucumber-tag_expressions (1.1.1)
     cucumber-wire (0.0.1)
     cvss (0.99.0)
     daemons (1.2.5)

@@ -1,1 +1,1 @@
-rvm use 2.3.5@ruby2.3.5-rails3.2 --create
+rvm use 2.3.6@ruby2.3.6-rails3.2 --create

@@ -110,7 +110,7 @@ GEM
     cucumber-tag_expressions (1.1.1)
     cucumber-wire (0.0.1)
     cvss (0.99.0)
-    daemons (1.2.5)
+    daemons (1.2.6)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)

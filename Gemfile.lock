@@ -233,7 +233,7 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     logger-colors (1.0.0)
-    loofah (2.2.1)
+    loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.5.5)
@@ -292,7 +292,7 @@ GEM
       thor (>= 0.14.6, < 2.0)
     rainbow (2.2.2)
       rake
-    rake (12.3.0)
+    rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)

@@ -207,7 +207,7 @@ GEM
       loofah (>= 2.0)
       sax-machine (>= 1.0)
     ffi (1.9.23)
-    gherkin (5.0.0)
+    gherkin (5.1.0)
     googlecharts (1.6.12)
     haml (5.0.4)
       temple (>= 0.8.0)

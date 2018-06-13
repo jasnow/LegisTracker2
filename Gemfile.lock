@@ -374,8 +374,8 @@ GEM
       rack-test (>= 0.5.3)
     xpath (3.1.0)
       nokogiri (~> 1.8)
-    yaml_db (0.6.0)
-      rails (>= 3.0, < 5.2)
+    yaml_db (0.7.0)
+      rails (>= 3.0)
       rake (>= 0.8.7)
 
 PLATFORMS

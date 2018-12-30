@@ -71,9 +71,6 @@ group :test do
   gem 'database_cleaner'
   gem 'email_spec'
 
-  gem 'autotest-rails'
-  gem 'autotest-fsevent'
-  gem 'autotest-growl'
   gem 'launchy'
 
   # Analysis Gems

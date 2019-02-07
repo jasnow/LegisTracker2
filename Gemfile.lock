@@ -373,7 +373,7 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers
   simplecov
-  sqlite3
+  sqlite3 (= 1.3.13)
   test-unit
   thin
   uglifier

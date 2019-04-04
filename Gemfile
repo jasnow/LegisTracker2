@@ -58,7 +58,7 @@ group :development, :test do
   gem 'rubocop-rspec'
 
   # Analysis Gems
-  gem 'brakeman'
+  gem 'railroader'
   gem 'cane'
   gem 'holepicker'
 end

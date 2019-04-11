@@ -315,7 +315,7 @@ GEM
     temple (0.7.7)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    test-unit (3.3.1)
+    test-unit (3.3.2)
       power_assert
     thin (1.7.2)
       daemons (~> 1.0, >= 1.0.9)

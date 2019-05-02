@@ -84,5 +84,7 @@ module LegisTracker2
       g.javascripts = false
       g.helper = false
     end
+
+    config.generators.javascript_engine = :js
   end
 end

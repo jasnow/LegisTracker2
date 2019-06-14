@@ -13,7 +13,6 @@ gem 'nokogiri'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'thin'
-gem 'overcommit'
 
 # Gems used only for assets and not required
 # in production environments by default.

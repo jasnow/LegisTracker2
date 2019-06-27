@@ -118,7 +118,7 @@ GEM
     email_spec (1.6.0)
       launchy (~> 2.1)
       mail (~> 2.2)
-    equatable (0.6.0)
+    equatable (0.6.1)
     erubi (1.8.0)
     erubis (2.7.0)
     eventmachine (1.2.7)

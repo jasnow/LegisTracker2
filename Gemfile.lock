@@ -216,8 +216,6 @@ GEM
       activesupport (= 3.2.22.5)
       bundler (~> 1.0)
       railties (= 3.2.22.5)
-    rails-footnotes (4.1.8)
-      rails (>= 3.2)
     railties (3.2.22.5)
       actionpack (= 3.2.22.5)
       activesupport (= 3.2.22.5)
@@ -353,7 +351,6 @@ DEPENDENCIES
   pg
   railroader
   rails (= 3.2.22.5)
-  rails-footnotes
   rspec-rails
   rubocop-rspec
   sass-rails

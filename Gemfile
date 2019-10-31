@@ -48,8 +48,6 @@ group :development, :test do
   # 10/25/2012: Checked/Appears to not be used in production.
   gem 'capybara-screenshot'
 
-  gem 'rails-footnotes'
-
   gem 'better_errors'
   gem 'binding_of_caller'
 

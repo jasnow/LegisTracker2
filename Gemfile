@@ -32,10 +32,8 @@ end
 group :development, :test do
   # DATABASE-RELATED
   gem 'sqlite3', '1.3.13' # 2/7/2019: LOCKED DOWN
-  gem 'mysql2'
 
   gem 'yaml_db'
-  # gem 'pg'
 
   gem 'rspec-rails'
   gem 'shoulda-matchers'

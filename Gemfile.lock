@@ -130,8 +130,8 @@ GEM
     faker (2.2.1)
       i18n (>= 0.8)
     fastercsv (1.5.5)
-    feedjira (3.0.0)
-      loofah (>= 2.2.1)
+    feedjira (3.1.0)
+      loofah (>= 2.3.1)
       sax-machine (>= 1.0)
     ffi (1.11.2)
     gherkin (5.1.0)
@@ -176,11 +176,10 @@ GEM
     multi_json (1.14.1)
     multi_test (0.1.2)
     multi_xml (0.6.0)
-    mysql2 (0.5.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    parallel (1.19.0)
+    parallel (1.19.1)
     parser (2.6.5.0)
       ast (~> 2.4.0)
     pg (1.1.4)
@@ -346,7 +345,6 @@ DEPENDENCIES
   jquery-ui-rails
   launchy
   meta_search
-  mysql2
   nokogiri
   pg
   railroader

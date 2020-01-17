@@ -305,7 +305,7 @@ GEM
     tzinfo (0.3.56)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.6.0)
+    unicode-display_width (1.6.1)
     warden (1.2.7)
       rack (>= 1.0)
     webrat (0.7.3)
